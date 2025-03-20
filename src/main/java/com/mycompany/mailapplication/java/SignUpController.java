@@ -7,9 +7,13 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 public class SignUpController {
     
+    @FXML
+    private AnchorPane SignUp;
+
     @FXML
     private TextField emailField;
 

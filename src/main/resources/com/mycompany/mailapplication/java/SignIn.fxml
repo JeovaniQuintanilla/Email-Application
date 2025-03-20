@@ -6,13 +6,13 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane fx:id="SignIn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.SignInController">
+<AnchorPane fx:id="SignIn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.SignInController">
    <children>
-      <ImageView fitHeight="135.0" fitWidth="161.0" layoutX="220.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="SignInBtn" layoutX="247.0" layoutY="290.0" mnemonicParsing="false" onAction="#SignIn" prefHeight="44.0" prefWidth="107.0" text="SignIn" />
-      <TextField fx:id="pwordField" layoutX="226.0" layoutY="233.0" promptText="Password:" />
-      <TextField fx:id="emailField" layoutX="226.0" layoutY="186.0" promptText="Email:" />
-      <Label layoutX="218.0" layoutY="353.0" prefHeight="17.0" prefWidth="101.0" text="Need An Account?" />
-      <Label fx:id="signupText" layoutX="321.0" layoutY="353.0" onMouseClicked="#GoToSignUp" prefHeight="17.0" prefWidth="62.0" text="Create One" textFill="#1c56d3" />
+      <ImageView fitHeight="135.0" fitWidth="161.0" layoutX="240.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="SignInBtn" layoutX="267.0" layoutY="339.0" mnemonicParsing="false" onAction="#SignIn" prefHeight="44.0" prefWidth="107.0" text="SignIn" />
+      <TextField fx:id="pwordField" layoutX="246.0" layoutY="279.0" promptText="Password:" />
+      <TextField fx:id="emailField" layoutX="246.0" layoutY="232.0" promptText="Email:" />
+      <Label layoutX="238.0" layoutY="402.0" prefHeight="17.0" prefWidth="101.0" text="Need An Account?" />
+      <Label fx:id="signupText" layoutX="341.0" layoutY="402.0" onMouseClicked="#GoToSignUp" prefHeight="17.0" prefWidth="62.0" text="Create One" textFill="#1c56d3" />
    </children>
 </AnchorPane>

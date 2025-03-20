@@ -33,7 +33,7 @@ public class SignInController {
     }
 
     @FXML
-    void SignIn(ActionEvent event) {
-
+    void SignIn(ActionEvent event) throws IOException {
+        App.setRoot("SignUp");
     }
 }

@@ -40,7 +40,7 @@ public class SignUpController {
     }
 
     @FXML
-    void ReturnToSignIn(MouseEvent event) {
-
+    void ReturnToSignIn(MouseEvent event) throws IOException {
+        App.setRoot("SignIn");
     }
 }

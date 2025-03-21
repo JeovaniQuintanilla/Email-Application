@@ -11,7 +11,7 @@ package com.mycompany.mailapplication.java;
 public class Email {
     
     private String sender;
-    private String recepient;
+    private String recipient;
     private String subject;
     private String message;
 
@@ -24,7 +24,7 @@ public class Email {
      */
     public Email(String sender, String recepient, String subject, String message) {
         this.sender = sender;
-        this.recepient = recepient;
+        this.recipient = recepient;
         this.subject = subject;
         this.message = message;
     }
@@ -53,18 +53,18 @@ public class Email {
 
     /**
      * Recipient Setter
-     * @param recepient
+     * @param recipient
      */
-    public void setRecepient(String recepient) {
-        this.recepient = recepient;
+    public void setRecipient(String recipient) {
+        this.recipient = recipient;
     }
 
     /**
      * Recipient Getter
      * @return
      */
-    public String getRecepient() {
-        return recepient;
+    public String getRecipient() {
+        return recipient;
     }
 
     /**

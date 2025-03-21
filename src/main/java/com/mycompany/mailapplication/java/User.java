@@ -9,5 +9,9 @@ package com.mycompany.mailapplication.java;
  * @author jeova
  */
 public class User {
-    
+    private String fName;
+    private String lName;
+    private String emailAddr;
+    private String password;
+ 
 }

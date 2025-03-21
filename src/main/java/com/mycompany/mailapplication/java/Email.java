@@ -10,4 +10,11 @@ package com.mycompany.mailapplication.java;
  */
 public class Email {
     
+    private String sender;
+    private String recepient;
+    private String subject;
+    private String message;
+    
+    
+    
 }

@@ -25,6 +25,38 @@ public class Email {
     public Email() {
     }
     
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+    public String getSender() {
+        return sender;
+    }
+
+    
+    public void setRecepient(String recepient) {
+        this.recepient = recepient;
+    }
+    public String getRecepient() {
+        return recepient;
+    }
+
+   
+    public void setSubject(String subject) {
+        this.subject = subject;
+    }
+    public String getSubject() {
+        return subject;
+    }
+    
+    
+    public void setMessage(String message) {
+        this.message = message;
+    }
+    public String getMessage() {
+        return message;
+    }
+
+    
     
     
 }

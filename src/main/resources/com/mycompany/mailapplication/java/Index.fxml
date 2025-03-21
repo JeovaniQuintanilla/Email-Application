@@ -5,9 +5,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="com.mycompany.mailapplication.java.IndexController">
+<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/22" fx:controller="com.mycompany.mailapplication.java.IndexController">
    <children>
-      <Button fx:id="hubBtn" layoutX="241.0" layoutY="191.0" mnemonicParsing="false" onAction="#logOut" prefHeight="51.0" prefWidth="119.0" text="LogOut" />
-      <Label layoutX="246.0" layoutY="139.0" text="This is the Main Hub" />
+      <Button fx:id="hubBtn" layoutX="261.0" layoutY="241.0" mnemonicParsing="false" onAction="#logOut" prefHeight="51.0" prefWidth="119.0" text="LogOut" />
+      <Label layoutX="266.0" layoutY="189.0" text="This is the Main Hub" />
    </children>
 </AnchorPane>

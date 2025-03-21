@@ -4,6 +4,7 @@
  */
 package com.mycompany.mailapplication.java;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -30,8 +31,8 @@ public class IndexController implements Initializable {
     private Button hubBtn;
 
     @FXML
-    void logOut(ActionEvent event) {
-
+    void logOut(ActionEvent event) throws IOException {
+        App.setRoot("SignIn");
     }    
     
 }

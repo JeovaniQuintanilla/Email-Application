@@ -54,7 +54,7 @@ public class SignInController {
     @FXML
     void SignIn(ActionEvent event) throws IOException {
         if(verifyCreds() == true && (!emailField.getText().isBlank() || !pwordField.getText().isBlank())){
-           App.setRoot("SignUp");
+           App.setRoot("Index");
         }
     }
 }

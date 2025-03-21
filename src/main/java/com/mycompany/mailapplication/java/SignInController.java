@@ -43,7 +43,7 @@ public class SignInController {
         String testemail = "jeo@gmail.com";
         String testPword = "123abc";
         boolean flag = true;
-        if(!email.equals(testemail) && !password.equals(testPword)){
+        if(!email.equals(testemail) || !password.equals(testPword)){
             flag = false;
         }
         System.out.println(flag);

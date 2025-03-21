@@ -26,6 +26,12 @@ public class IndexController implements Initializable {
         // TODO
     }
 
-     
+  @FXML
+    private Button hubBtn;
+
+    @FXML
+    void logOut(ActionEvent event) {
+
+    }    
     
 }

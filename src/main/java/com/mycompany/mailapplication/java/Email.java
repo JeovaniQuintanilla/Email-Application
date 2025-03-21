@@ -14,6 +14,16 @@ public class Email {
     private String recepient;
     private String subject;
     private String message;
+
+    public Email(String sender, String recepient, String subject, String message) {
+        this.sender = sender;
+        this.recepient = recepient;
+        this.subject = subject;
+        this.message = message;
+    }
+
+    public Email() {
+    }
     
     
     

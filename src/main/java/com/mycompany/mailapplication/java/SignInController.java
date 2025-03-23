@@ -1,16 +1,20 @@
 package com.mycompany.mailapplication.java;
 
+
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 
-public class SignInController {
+
+public class SignInController implements Initializable{
     @FXML
     private AnchorPane SignIn;
 
@@ -26,9 +30,10 @@ public class SignInController {
     @FXML
     private Label signupText;
     
-    @FXML
-    private void switchToSecondary() throws IOException {
-        App.setRoot("SignUp");
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+      
+
     }
     
     @FXML
@@ -37,6 +42,8 @@ public class SignInController {
     }
     
     private Boolean verifyCreds() {
+       
+
         String email = emailField.getText();
         String password = pwordField.getText();
         

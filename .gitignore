@@ -1,1 +1,3 @@
 /target/
+# Ignore the Firebase service key file
+EAServiceKey.json

@@ -3,7 +3,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package service;
-
+import com.google.cloud.Service;
 import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.Firestore;
@@ -50,13 +50,30 @@ public class FirebaseInitialize {
 
         // Iterate over documents and print out the email and password fields
         for (QueryDocumentSnapshot document : documents) {
+            
+            
             String email = document.getString("email");
-            String password = document.getString("password");
+            String password = document.getString("pword");
 
             System.out.println("Email: " + email);
             System.out.println("Password: " + password);
         }
 
     }
-  
+    
+    
+    public static void main(String[] args) {
+        try {
+            // Initialize Firebase
+            FirebaseInitialize firebaseInitialize = new FirebaseInitialize();
+            firebaseInitialize.initialize();
+
+            // Read data from Firebase
+            firebaseInitialize.readFromFirebase();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }
+
+ 

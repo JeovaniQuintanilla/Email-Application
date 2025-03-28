@@ -34,7 +34,7 @@ public class SignInController implements Initializable{
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-      
+        FirebaseInitialize.initializeFB();
 
     }
     
@@ -44,25 +44,31 @@ public class SignInController implements Initializable{
     }
     
     private Boolean verifyCreds() {
+        //fb = new FirebaseInitialize();
         String email = emailField.getText();
         String password = pwordField.getText();
-        
-        String testemail = "jeo@gmail.com";
-        String testPword = "123abc";
-        boolean flag = true;
-        if(!email.equals(testemail) || !password.equals(testPword)){
-            flag = false;
+        if (emailField.getText().isBlank() || pwordField.getText().isBlank()){
+            return false;
         }
-        System.out.println(flag);
-       
-        return flag;
+            //String testemail = "jeo@gmail.com";
+            //String testPword = "123abc";
+            //boolean flag = true;
+            //if(!email.equals(testemail) || !password.equals(testPword)){
+            //flag = false;
+            //}
+            //System.out.println(flag);
+            
+        return FirebaseInitialize.getInstance().readFromFirebase(email, password);
+            
     }
     
     
     @FXML
     void SignIn(ActionEvent event) throws IOException {
-        if(verifyCreds() == true && (!emailField.getText().isBlank() || !pwordField.getText().isBlank())){
+        if(verifyCreds()){
            App.setRoot("Index");
+        }else{
+            System.out.println("Credentials are invalid");
         }
     }
 }

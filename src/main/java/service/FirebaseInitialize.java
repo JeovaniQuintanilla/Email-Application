@@ -27,41 +27,74 @@ import java.util.concurrent.ExecutionException;
  */
 
 public class FirebaseInitialize {
+    private static FirebaseInitialize instance;
+    private static Firestore db;// Initialize Firestore instance
     
-    public void initialize() throws FileNotFoundException, IOException{
-        FileInputStream serviceAccount = new FileInputStream("./EAServiceKey.json");
-        @SuppressWarnings("deprecation")
-        //FirebaseOptions options = new FirebaseOptions.Builder().setCredentials(GoogleCredentials.fromStream(serviceAccount)).setDatabaseUrl("https://emailapplication-a589b.firebaseio.com").build();
-        FirebaseOptions options = new FirebaseOptions.Builder()
-                .setCredentials(GoogleCredentials.fromStream(serviceAccount))
-                .build();
-        FirebaseApp.initializeApp(options);
-    }
-    public void readFromFirebase() throws InterruptedException, ExecutionException{
-       // Initialize Firestore instance
-        Firestore db = FirestoreClient.getFirestore();
+    
+    private FirebaseInitialize() {
+        try {
+            if (FirebaseApp.getApps().isEmpty()) {
+                FileInputStream serviceAccount = new FileInputStream("EAServiceKey.json");
 
-        // Fetch all documents from 'users' collection
-        ApiFuture<QuerySnapshot> query = db.collection("users").get();
-        QuerySnapshot querySnapshot = query.get();
+                FirebaseOptions options = new FirebaseOptions.Builder()
+                        .setCredentials(GoogleCredentials.fromStream(serviceAccount))
+                        .build();
 
-        // Get list of documents
-        List<QueryDocumentSnapshot> documents = querySnapshot.getDocuments();
-
-        // Iterate over documents and print out the email and password fields
-        for (QueryDocumentSnapshot document : documents) {
-            
-            
-            String email = document.getString("email");
-            String password = document.getString("pword");
-
-            System.out.println("Email: " + email);
-            System.out.println("Password: " + password);
+                FirebaseApp.initializeApp(options);
+                System.out.println("Firebase initialized!");
+            } else {
+                System.out.println("Firebase already initialized.");
+            }
+            db = FirestoreClient.getFirestore();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Firebase initialization failed.");
         }
-
     }
     
     
+    public static void initializeFB() {
+          if (instance == null) {
+            instance = new FirebaseInitialize();
+        }
+    }
+    
+    public static FirebaseInitialize getInstance() {
+        if (instance == null) {
+            instance = new FirebaseInitialize();
+        }
+        return instance;
+    }
+    
+    public Boolean readFromFirebase(String email, String password) {
+        Boolean flag = false;
+        
+        try{
+        ApiFuture<QuerySnapshot> query = db.collection("users").get();// Fetch all documents from 'users' collection
+        QuerySnapshot querySnapshot = query.get();
+        for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {// Iterate over documents and print out the email and password fields
+            
+            System.out.println("Document - email: " + document.getString("email") +", password: "+document.getString("pword"));
+            
+            if(email.equals(document.getString("email")) && password.equals(document.getString("pword"))){
+                flag = true;
+                break;
+            }
+            //System.out.println("Email: " + email);
+           //System.out.println("Password: " + password);
+        }
+       }catch (ExecutionException | InterruptedException ex) {
+                ex.getMessage();
+                return false;
+               
+         } System.out.println(flag);
+        return flag;  
+    }
+    
+/**
+ * 
+ * @param args 
+ 
     public static void main(String[] args) {
         try {
             // Initialize Firebase
@@ -69,11 +102,11 @@ public class FirebaseInitialize {
             firebaseInitialize.initialize();
 
             // Read data from Firebase
-            firebaseInitialize.readFromFirebase();
+            //firebaseInitialize.readFromFirebase();
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }
 
- 
+    

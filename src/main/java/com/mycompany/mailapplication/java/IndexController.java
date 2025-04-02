@@ -11,6 +11,7 @@ import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
 
 /**
  * FXML Controller class
@@ -27,8 +28,24 @@ public class IndexController implements Initializable {
         // TODO
     }
 
-  @FXML
+    @FXML
+    private Button composeBtn;
+
+    @FXML
     private Button hubBtn;
+
+    @FXML
+    private ListView<?> listView;
+
+    @FXML
+    void createEmail(ActionEvent event) {
+
+    }
+
+    @FXML
+    void loadEmails(ActionEvent event) {
+
+    }
 
     @FXML
     void logOut(ActionEvent event) throws IOException {

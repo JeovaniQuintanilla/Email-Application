@@ -14,23 +14,44 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane id="AnchorPane" prefHeight="480.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.IndexController">
+<AnchorPane id="AnchorPane" prefHeight="573.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.IndexController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#05315b" height="400.0" layoutX="-3.0" layoutY="81.0" stroke="BLACK" strokeType="INSIDE" width="143.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1e62a1" height="58.0" layoutX="-1.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" width="652.0" />
-      <Label layoutX="13.0" layoutY="44.0" text="This is the Main Hub" textFill="#eee7e7" />
-      <ListView layoutX="140.0" layoutY="195.0" prefHeight="286.0" prefWidth="510.0" />
-      <VBox alignment="TOP_CENTER" layoutX="8.0" layoutY="134.0" prefHeight="346.0" prefWidth="119.0">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#05315b" height="492.0" layoutX="-3.0" layoutY="81.0" stroke="BLACK" strokeType="INSIDE" width="189.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1e62a1" height="67.0" layoutX="-1.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" width="787.0" />
+      <Label layoutX="38.0" layoutY="44.0" text="This is the Main Hub" textFill="#eee7e7" />
+      <ListView fx:id="listView" layoutX="186.0" layoutY="223.0" onEditStart="#loadEmails" prefHeight="349.0" prefWidth="599.0" />
+      <VBox alignment="TOP_CENTER" layoutX="8.0" layoutY="177.0" prefHeight="365.0" prefWidth="168.0">
          <children>
-            <Label prefHeight="32.0" prefWidth="109.0" text="Inbox" textFill="#eee7e7">
+            <Label alignment="CENTER" prefHeight="32.0" prefWidth="109.0" text="Inbox" textFill="#eee7e7">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+            <Label alignment="CENTER" prefHeight="32.0" prefWidth="109.0" text="Sent" textFill="#eee7e7">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Label>
+            <Label alignment="CENTER" prefHeight="32.0" prefWidth="109.0" text="Drafts" textFill="#eee7e7">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Label>
+            <Label alignment="CENTER" prefHeight="32.0" prefWidth="109.0" text="Settings" textFill="#eee7e7">
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
             </Label>
          </children>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
       </VBox>
-      <Button fx:id="hubBtn" layoutX="574.0" layoutY="94.0" mnemonicParsing="false" onAction="#logOut" prefHeight="25.0" prefWidth="68.0" text="LogOut" />
-      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="651.0">
+      <Button fx:id="hubBtn" layoutX="676.0" layoutY="49.0" mnemonicParsing="false" onAction="#logOut" prefHeight="25.0" prefWidth="68.0" text="LogOut" />
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="786.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
@@ -49,8 +70,8 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TextField layoutX="209.0" layoutY="42.0" prefHeight="32.0" prefWidth="365.0" promptText="Search Emails" />
-      <Button alignment="CENTER" layoutX="13.0" layoutY="89.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="109.0" text="compose">
+      <TextField layoutX="277.0" layoutY="45.0" prefHeight="32.0" prefWidth="365.0" promptText="Search Emails" />
+      <Button fx:id="composeBtn" alignment="CENTER" layoutX="38.0" layoutY="98.0" mnemonicParsing="false" onAction="#createEmail" prefHeight="34.0" prefWidth="109.0" text="compose">
          <effect>
             <Blend />
          </effect>

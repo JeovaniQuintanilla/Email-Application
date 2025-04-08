@@ -20,7 +20,7 @@ import service.FirebaseInitialize;
 /**
  * FXML Controller class
  *
- * @author jeova
+ * @author jeovani Quiintanilla
  */
 public class IndexController implements Initializable {
 
@@ -41,20 +41,14 @@ public class IndexController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-           FirebaseInitialize.initializeFB();
-           String email = SignInController.currentUser.getEmailAddr();
-           //System.out.println("current user on index: "+ email);
-           List<Email> emails = FirebaseInitialize.getInstance().loadEmailsFromDB(email);
-
-    // Convert to ObservableList and update ListView
-   
-    if (emails != null && !emails.isEmpty()) {
-        ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
-        listView.setItems(observableEmails);
-    } else {
-        System.out.println("No emails found.");
-    }
-    
+        List<Email> emails = retreiveEmails();
+       
+        if (emails != null && !emails.isEmpty()) {
+            ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
+            listView.setItems(observableEmails);
+        } else {
+            System.out.println("No emails found.");
+        }
     }
        
        
@@ -62,16 +56,26 @@ public class IndexController implements Initializable {
     void createEmail(ActionEvent event) {
 
     }
-
-    @FXML
-    void loadEmails(ActionEvent event) {
-        
-        
-    }
-
+    
     @FXML
     void logOut(ActionEvent event) throws IOException {
         App.setRoot("SignIn");
-    }    
+    }  
     
+    
+    
+    
+   
+    /**
+     * User defined methods
+     * @return 
+     */
+    private List<Email> retreiveEmails() {
+        FirebaseInitialize.initializeFB();
+        String email = SignInController.currentUser.getEmailAddr();
+        //System.out.println("current user on index: "+ email);
+        List<Email> emails = FirebaseInitialize.getInstance().loadEmailsFromDB(email);
+        return emails;
+  
+    }
 }

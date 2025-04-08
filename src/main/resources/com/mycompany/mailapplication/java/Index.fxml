@@ -19,7 +19,7 @@
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#05315b" height="492.0" layoutX="-3.0" layoutY="81.0" stroke="BLACK" strokeType="INSIDE" width="189.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1e62a1" height="67.0" layoutX="-1.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" width="787.0" />
       <Label layoutX="38.0" layoutY="44.0" text="This is the Main Hub" textFill="#eee7e7" />
-      <ListView fx:id="listView" layoutX="186.0" layoutY="223.0" onEditStart="#loadEmails" prefHeight="349.0" prefWidth="599.0" />
+      <ListView fx:id="listView" layoutX="186.0" layoutY="223.0" prefHeight="349.0" prefWidth="599.0" />
       <VBox alignment="TOP_CENTER" layoutX="8.0" layoutY="177.0" prefHeight="365.0" prefWidth="168.0">
          <children>
             <Label alignment="CENTER" prefHeight="32.0" prefWidth="109.0" text="Inbox" textFill="#eee7e7">

@@ -41,6 +41,13 @@ public class SignUpController {
     
     @FXML
     void CreateAccount(ActionEvent event) {
+        String firstN = fnameField.getText();
+        String lastN = lnameField.getText();
+        String email = emailField.getText();
+        String pass = pwordField.getText();
+        
+        User new_user = new User(firstN,lastN,email,pass);
+        System.out.println("New User Created: " + new_user.getfName()+" "+ new_user.getlName());
 
     }
 

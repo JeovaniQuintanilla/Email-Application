@@ -14,6 +14,7 @@ import java.io.FileInputStream;
 import com.google.firebase.*;
 import com.google.firebase.cloud.FirestoreClient;
 import com.mycompany.mailapplication.java.Email;
+import com.mycompany.mailapplication.java.User;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -66,6 +67,12 @@ public class FirebaseInitialize {
             instance = new FirebaseInitialize();
         }
         return instance;
+    }
+    
+    
+    
+    public Boolean addToFirebase(User account){
+        return null;
     }
     
     public Boolean readFromFirebase(String email, String password) {

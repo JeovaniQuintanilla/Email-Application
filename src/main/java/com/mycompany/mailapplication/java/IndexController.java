@@ -43,18 +43,18 @@ public class IndexController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
            FirebaseInitialize.initializeFB();
            String email = SignInController.currentUser.getEmailAddr();
-           System.out.println("current user on index: "+ email);
-           //List<Email> emails = FirebaseInitialize.getInstance().loadEmailsFromDB(email);
+           //System.out.println("current user on index: "+ email);
+           List<Email> emails = FirebaseInitialize.getInstance().loadEmailsFromDB(email);
 
     // Convert to ObservableList and update ListView
-    /**
+   
     if (emails != null && !emails.isEmpty()) {
         ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
         listView.setItems(observableEmails);
     } else {
         System.out.println("No emails found.");
     }
-    */
+    
     }
        
        

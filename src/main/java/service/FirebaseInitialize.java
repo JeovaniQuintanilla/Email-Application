@@ -93,7 +93,7 @@ public class FirebaseInitialize {
         return flag;  
     }
     
-    /**
+    
     public List<Email> loadEmailsFromDB(String email) {
          List<Email> emailList = new ArrayList<>();
 
@@ -128,7 +128,7 @@ public class FirebaseInitialize {
 
     return emailList;
     }
-    **/
+    
     
     
 /**

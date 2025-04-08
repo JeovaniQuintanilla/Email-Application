@@ -31,11 +31,12 @@ public class SignInController implements Initializable{
 
     @FXML
     private Label signupText;
+   
+    static User currentUser = new User();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         FirebaseInitialize.initializeFB();
-
     }
     
     @FXML
@@ -58,15 +59,20 @@ public class SignInController implements Initializable{
             //}
             //System.out.println(flag);
             
-        return FirebaseInitialize.getInstance().readFromFirebase(email, password);
-            
+        return FirebaseInitialize.getInstance().readFromFirebase(email, password);        
     }
     
     
     @FXML
     void SignIn(ActionEvent event) throws IOException {
         if(verifyCreds()){
+            String email = emailField.getText();
+            String pass = pwordField.getText();
+            currentUser.setEmailAddr(email);
+            currentUser.setPassword(pass);
+            System.out.print("current user " + currentUser.getEmailAddr());
            App.setRoot("Index");
+           
         }else{
             System.out.println("Credentials are invalid");
         }

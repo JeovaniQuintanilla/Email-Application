@@ -13,8 +13,10 @@ import java.io.FileInputStream;
 
 import com.google.firebase.*;
 import com.google.firebase.cloud.FirestoreClient;
+import com.mycompany.mailapplication.java.Email;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 
@@ -90,6 +92,44 @@ public class FirebaseInitialize {
          } System.out.println(flag);
         return flag;  
     }
+    
+    /**
+    public List<Email> loadEmailsFromDB(String email) {
+         List<Email> emailList = new ArrayList<>();
+
+    try {
+        // Fetch the user document based on email
+        ApiFuture<QuerySnapshot> userQuery = db.collection("users").whereEqualTo("email", email).get();
+        QuerySnapshot userSnapshot = userQuery.get();
+
+        if (!userSnapshot.isEmpty()) {
+            String userId = userSnapshot.getDocuments().get(0).getId(); // Get user ID
+            System.out.println("User ID: " + userId);
+
+            // Fetch emails from the user's 'emails' subcollection
+            ApiFuture<QuerySnapshot> emailQuery = db.collection("users").document(userId).collection("emails").get();
+            QuerySnapshot emailSnapshot = emailQuery.get();
+
+            for (QueryDocumentSnapshot emailDoc : emailSnapshot.getDocuments()) {
+                String sender = emailDoc.getString("sender");
+                String recipient = emailDoc.getString("recipient");
+                String subject = emailDoc.getString("subject");
+                String message = emailDoc.getString("message");
+
+                Email emailObj = new Email(sender, recipient, subject, message);
+                emailList.add(emailObj);
+            }
+        } else {
+            System.out.println("No user found with email: " + email);
+        }
+    } catch (ExecutionException | InterruptedException e) {
+        e.printStackTrace();
+    }
+
+    return emailList;
+    }
+    **/
+    
     
 /**
  * 

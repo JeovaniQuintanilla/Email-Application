@@ -6,12 +6,16 @@ package com.mycompany.mailapplication.java;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import service.FirebaseInitialize;
 
 /**
  * FXML Controller class
@@ -23,10 +27,7 @@ public class IndexController implements Initializable {
     /**
      * Initializes the controller class.
      */
-    @Override
-    public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }
+   
 
     @FXML
     private Button composeBtn;
@@ -35,8 +36,28 @@ public class IndexController implements Initializable {
     private Button hubBtn;
 
     @FXML
-    private ListView<?> listView;
+    private ListView<Email> listView;
+    
+    
+    @Override
+    public void initialize(URL url, ResourceBundle rb) {
+           FirebaseInitialize.initializeFB();
+           String email = SignInController.currentUser.getEmailAddr();
+           System.out.println("current user on index: "+ email);
+           //List<Email> emails = FirebaseInitialize.getInstance().loadEmailsFromDB(email);
 
+    // Convert to ObservableList and update ListView
+    /**
+    if (emails != null && !emails.isEmpty()) {
+        ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
+        listView.setItems(observableEmails);
+    } else {
+        System.out.println("No emails found.");
+    }
+    */
+    }
+       
+       
     @FXML
     void createEmail(ActionEvent event) {
 
@@ -44,7 +65,8 @@ public class IndexController implements Initializable {
 
     @FXML
     void loadEmails(ActionEvent event) {
-
+        
+        
     }
 
     @FXML

@@ -85,6 +85,10 @@ public class FirebaseInitialize {
                 flag = true;
                 break;
             }
+            if(email.equals(document.getString("emailAddr")) && password.equals(document.getString("password"))){
+                flag = true;
+                break;
+            }
             //System.out.println("Email: " + email);
            //System.out.println("Password: " + password);
         }

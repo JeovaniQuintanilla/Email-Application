@@ -37,10 +37,6 @@ public class SignUpController {
     @FXML
     private Button signupBtn;
     
-    public void initialize(URL url, ResourceBundle rb) {
-        FirebaseInitialize.initializeFB();
-    }
-  
     @FXML
     private void switchToPrimary() throws IOException {
         App.setRoot("SignIn");
@@ -48,13 +44,18 @@ public class SignUpController {
     
     @FXML
     void CreateAccount(ActionEvent event) {
-        String firstN = fnameField.getText();
-        String lastN = lnameField.getText();
-        String email = emailField.getText();
-        String pass = pwordField.getText();
+ 
+           
+        String fName = fnameField.getText();
+        String lName = lnameField.getText();
+        String emailAddr = emailField.getText();
+        String password = pwordField.getText();
         
-        User new_user = new User(firstN,lastN,email,pass);
-        System.out.println("New User Created: " + new_user.getfName()+" "+ new_user.getlName());
+        User new_user = new User(fName,lName,emailAddr,password);
+        FirebaseInitialize.initializeFB(); 
+        FirebaseInitialize fb = FirebaseInitialize.getInstance();
+        fb.addToFirebase(new_user);
+        //System.out.println("New User Created: " + new_user.getfName()+" "+ new_user.getlName());
       
     }
 

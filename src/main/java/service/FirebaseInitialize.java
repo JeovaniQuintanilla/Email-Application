@@ -6,9 +6,11 @@ package service;
 import com.google.cloud.Service;
 import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
+import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.google.cloud.firestore.QuerySnapshot;
+import com.google.cloud.firestore.WriteResult;
 import java.io.FileInputStream;
 
 import com.google.firebase.*;
@@ -67,12 +69,6 @@ public class FirebaseInitialize {
             instance = new FirebaseInitialize();
         }
         return instance;
-    }
-    
-    
-    
-    public Boolean addToFirebase(User account){
-        return null;
     }
     
     public Boolean readFromFirebase(String email, String password) {
@@ -136,24 +132,46 @@ public class FirebaseInitialize {
         return emailList;
     }
     
-    
-    
-/**
- * 
- * @param args 
- 
-    public static void main(String[] args) {
+    public void addToFirebase(User user){
+        boolean flag = true;
         try {
-            // Initialize Firebase
-            FirebaseInitialize firebaseInitialize = new FirebaseInitialize();
-            firebaseInitialize.initialize();
+            //See if the account already exist
+            ApiFuture<QuerySnapshot> query = db.collection("users").get();// Fetch all documents from 'users' collection
+            QuerySnapshot querySnapshot = query.get();
+            for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {
+                if(user.getEmailAddr().equals(document.getString("emailAddr"))){
+                    flag = false;
+                }
+                //System.out.println("Email: " + email);
+               //System.out.println("Password: " + password);
+            }
+            if (flag == true){
+                ApiFuture<DocumentReference> result = db.collection("users").add(user);
+                DocumentReference ref = result.get();
+                System.out.print("New User Added to FireBase!");
 
-            // Read data from Firebase
-            //firebaseInitialize.readFromFirebase();
-        } catch (Exception e) {
-            e.printStackTrace();
+                //create a email subcollection for this user
+                Email greeting = new Email("JMail@organization.com", user.getEmailAddr(),"Welcome to Jmail!", 
+                        "The team at JMail welcomes you to our application, we hope you enjoy :).");
+                //send greeting
+                ApiFuture<DocumentReference> greet = ref.collection("emails").add(greeting); 
+                System.out.println("\nGreeting Sent!! ");
+            }else{
+                System.out.println("There exist an account already with this email.");
+            }   
+            
+        } catch (InterruptedException | ExecutionException ex) {
+            System.err.println("Unable to reach Firebase, User not added");
         }
-    }*/
+    }
+    
+    public static void main(String[] args) {
+            FirebaseInitialize.initializeFB();
+            FirebaseInitialize fb = FirebaseInitialize.getInstance();
+            User user = new User("Jeff", "Cuadra", "jeff2@gmail.com", "2what4u");
+            fb.addToFirebase(user);
+             
+    }
 }
 
     

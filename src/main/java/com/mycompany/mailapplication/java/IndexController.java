@@ -48,9 +48,6 @@ public class IndexController implements Initializable {
             for (Email email : emails) {
                 listView.getItems().addAll("New email from - " + email.getSender());
             }
-            
-            
-            
         } else {
             System.out.println("No emails found.");
         }

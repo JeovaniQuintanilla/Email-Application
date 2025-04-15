@@ -44,19 +44,17 @@ public class SignUpController {
     
     @FXML
     void CreateAccount(ActionEvent event) {
- 
-           
-        String fName = fnameField.getText();
-        String lName = lnameField.getText();
-        String emailAddr = emailField.getText();
-        String password = pwordField.getText();
+        String first = fnameField.getText();
+        String last = lnameField.getText();
+        String email = emailField.getText();
+        String pword = pwordField.getText();
         
-        User new_user = new User(fName,lName,emailAddr,password);
+        
         FirebaseInitialize.initializeFB(); 
         FirebaseInitialize fb = FirebaseInitialize.getInstance();
+        User new_user = new User(first,last,email,pword);
         fb.addToFirebase(new_user);
         //System.out.println("New User Created: " + new_user.getfName()+" "+ new_user.getlName());
-      
     }
 
     @FXML

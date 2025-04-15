@@ -106,7 +106,7 @@ public class FirebaseInitialize {
 
         try {
             // Fetch the user document based on email
-            ApiFuture<QuerySnapshot> userQuery = db.collection("users").whereEqualTo("email", email).get();
+            ApiFuture<QuerySnapshot> userQuery = db.collection("users").whereEqualTo("emailAddr", email).get();
             QuerySnapshot userSnapshot = userQuery.get();
 
             if (!userSnapshot.isEmpty()) {

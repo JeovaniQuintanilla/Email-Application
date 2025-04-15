@@ -36,7 +36,7 @@ public class IndexController implements Initializable {
     private Button hubBtn;
 
     @FXML
-    private ListView<Email> listView;
+    private ListView<String> listView;
     
     
     @Override
@@ -44,8 +44,13 @@ public class IndexController implements Initializable {
         List<Email> emails = retreiveEmails();
        
         if (emails != null && !emails.isEmpty()) {
-            ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
-            listView.setItems(observableEmails);
+            //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
+            for (Email email : emails) {
+                listView.getItems().addAll("New email from - " + email.getSender());
+            }
+            
+            
+            
         } else {
             System.out.println("No emails found.");
         }

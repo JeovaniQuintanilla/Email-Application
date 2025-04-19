@@ -36,10 +36,6 @@ public class SignUpController {
     @FXML
     private Button signupBtn;
     
-    @FXML
-    private void switchToPrimary() throws IOException {
-        App.setRoot("SignIn");
-    }
     
     public void initialize(URL url, ResourceBundle rb) {
         FirebaseInitialize.initializeFB();

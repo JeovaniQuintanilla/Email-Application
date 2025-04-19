@@ -14,8 +14,10 @@ import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.VBox;
 import service.FirebaseInitialize;
 
 /**
@@ -28,30 +30,29 @@ public class IndexController implements Initializable {
     /**
      * Initializes the controller class.
      */
-   
 
-    @FXML
+   @FXML
     private Button composeBtn;
 
     @FXML
-    private Button hubBtn;
+    private Label drafts;
+
+    @FXML
+    private Label inbox;
 
     @FXML
     private ListView<String> listView;
+
+    @FXML
+    private VBox mailNav;
+
+    @FXML
+    private Label sent;
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        List<Email> emails = retreiveEmails();
-        if (emails != null && !emails.isEmpty()) {
-            //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
-            for (Email email : emails) {
-                listView.getItems().addAll("New email from - " + email.getSender() +"\n" +
-                email.getMessage());
-            }
-        } else {
-            System.out.println("No emails found.");
-        }
+       
     }
 
     @FXML
@@ -66,7 +67,13 @@ public class IndexController implements Initializable {
 
     @FXML
     void displayInbox(MouseEvent event) {
-
+        int count = listView.getItems().size();
+        if (count != 0){
+            listView.getItems().clear();
+        }
+        displayInbox();
+        System.out.print("\nCurrent Listview: " + count);
+      
     }
 
     @FXML
@@ -82,6 +89,21 @@ public class IndexController implements Initializable {
     @FXML
     void logOut(MouseEvent event) throws IOException {
         SignUpController.toSignInScreen();
+    }
+    
+    /**
+     * Displays the contents of inbox
+    */
+    private void displayInbox(){
+        List<Email> emails = retreiveEmails();
+        if (emails != null && !emails.isEmpty()) {
+            //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
+            for (Email email : emails) {
+                listView.getItems().addAll("From" + email.getSender() + "\n" +email.getMessage());
+            }
+        } else {
+            System.out.println("No emails found.");
+        }
     }
    
     /**

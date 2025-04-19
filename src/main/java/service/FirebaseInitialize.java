@@ -166,12 +166,12 @@ public class FirebaseInitialize {
                 Email greeting = new Email("JMail@organization.com", user.getEmailAddr(),"Welcome to Jmail!", 
                         "The team at JMail welcomes you to our application, we hope you enjoy :).");
                 //send greeting
-                Map<String, Object> emailMap = new HashMap<>();
-                    emailMap.put("message", greeting.getMessage());
-                    emailMap.put("recipient", greeting.getRecipient());
-                    emailMap.put("sender", greeting.getSender());
-                    emailMap.put("subject", greeting.getSubject());
-                ApiFuture<DocumentReference> greet = ref.collection("emails").add(emailMap); 
+                Map<String, Object> inboxMap = new HashMap<>();
+                    inboxMap.put("message", greeting.getMessage());
+                    inboxMap.put("recipient", greeting.getRecipient());
+                    inboxMap.put("sender", greeting.getSender());
+                    inboxMap.put("subject", greeting.getSubject());
+                ApiFuture<DocumentReference> greet = ref.collection("emails").add(inboxMap); 
                 System.out.println("\nGreeting Sent!! ");
             }else{
                 System.out.println("There exist an account already with this email.");

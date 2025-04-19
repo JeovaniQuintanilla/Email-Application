@@ -18,11 +18,10 @@
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#05315b" height="492.0" layoutX="-3.0" layoutY="81.0" stroke="BLACK" strokeType="INSIDE" width="225.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1e62a1" height="67.0" layoutX="-1.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" width="787.0" />
-      <Label layoutX="38.0" layoutY="44.0" text="This is the Main Hub" textFill="#eee7e7" />
       <ListView fx:id="listView" layoutX="222.0" layoutY="125.0" prefHeight="448.0" prefWidth="563.0" />
-      <VBox alignment="TOP_CENTER" layoutX="8.0" layoutY="177.0" prefHeight="147.0" prefWidth="168.0">
+      <VBox fx:id="mailNav" alignment="TOP_CENTER" layoutX="8.0" layoutY="177.0" prefHeight="147.0" prefWidth="170.0">
          <children>
-            <Label alignment="CENTER" onMouseClicked="#displayInbox" prefHeight="32.0" prefWidth="109.0" text="Inbox" textFill="#eee7e7">
+            <Label fx:id="inbox" alignment="CENTER" onMouseClicked="#displayInbox" prefHeight="32.0" prefWidth="109.0" text="Inbox" textFill="#eee7e7">
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
@@ -30,17 +29,12 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <Label alignment="CENTER" onMouseClicked="#displaySent" prefHeight="32.0" prefWidth="109.0" text="Sent" textFill="#eee7e7">
+            <Label fx:id="sent" alignment="CENTER" onMouseClicked="#displaySent" prefHeight="32.0" prefWidth="109.0" text="Sent" textFill="#eee7e7">
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
             </Label>
-            <Label alignment="CENTER" onMouseClicked="#displayDrafts" prefHeight="32.0" prefWidth="109.0" text="Drafts" textFill="#eee7e7">
-               <graphic>
-                  <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
-               </graphic>
-            </Label>
-            <Label alignment="CENTER" onMouseClicked="#goToSettingPage" prefHeight="32.0" prefWidth="109.0" text="Settings" textFill="#eee7e7">
+            <Label fx:id="drafts" alignment="CENTER" onMouseClicked="#displayDrafts" prefHeight="32.0" prefWidth="109.0" text="Drafts" textFill="#eee7e7">
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
@@ -78,10 +72,20 @@
             <Cursor fx:constant="DEFAULT" />
          </cursor>
       </Button>
-      <Label alignment="CENTER" layoutX="14.0" layoutY="527.0" onMouseClicked="#logOut" prefHeight="32.0" prefWidth="200.0" style="-fx-border-color: balck;" text="LogOut" textFill="#eee7e7">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-      </Label>
+      <ImageView fitHeight="59.0" fitWidth="180.0" layoutX="12.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" />
+      <VBox layoutX="25.0" layoutY="492.0" prefHeight="67.0" prefWidth="170.0">
+         <children>
+            <Label alignment="CENTER" onMouseClicked="#goToSettingPage" prefHeight="32.0" prefWidth="138.0" text="Settings" textFill="#eee7e7">
+               <graphic>
+                  <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
+               </graphic>
+            </Label>
+            <Label alignment="CENTER" onMouseClicked="#logOut" prefHeight="32.0" prefWidth="175.0" style="-fx-border-color: balck;" text="LogOut" textFill="#eee7e7">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Label>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>

@@ -31,8 +31,11 @@ public class SignInController implements Initializable{
 
     @FXML
     private Label signupText;
-   
-    static User currentUser = new User();
+    
+    /**
+     * Reference to the Current User Logged in
+     */
+    static protected User currentUser = new User();
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -41,7 +44,7 @@ public class SignInController implements Initializable{
     
     @FXML
     void GoToSignUp(MouseEvent event) throws IOException {
-        SignUpController.toSignInScreen();
+        SignUpController.toSignUpScreen();
     }
     
     @FXML

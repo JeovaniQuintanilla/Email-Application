@@ -20,7 +20,9 @@ import com.mycompany.mailapplication.java.User;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutionException;
 
 
@@ -150,16 +152,27 @@ public class FirebaseInitialize {
                //System.out.println("Password: " + password);
             }
             if (flag == true){
-                ApiFuture<DocumentReference> result = db.collection("users").add(user);
+                //String emailaddr = user.getEmailAddr();
+                //String fName = user.getfName();
+                //String lName = user.getlName();
+                //String password = user.getPassword();
+                Map<String, Object> userMap = new HashMap<>();
+                    userMap.put("fName", user.getfName());
+                    userMap.put("lName", user.getlName());
+                    userMap.put("emailAddr", user.getEmailAddr());
+                    userMap.put("password", user.getPassword());
+
+                
+                ApiFuture<DocumentReference> result = db.collection("users").add(userMap);
                 DocumentReference ref = result.get();
                 System.out.print("New User Added to FireBase!");
-
+                /**
                 //create a email subcollection for this user
                 Email greeting = new Email("JMail@organization.com", user.getEmailAddr(),"Welcome to Jmail!", 
                         "The team at JMail welcomes you to our application, we hope you enjoy :).");
                 //send greeting
                 ApiFuture<DocumentReference> greet = ref.collection("emails").add(greeting); 
-                System.out.println("\nGreeting Sent!! ");
+                System.out.println("\nGreeting Sent!! ");**/
             }else{
                 System.out.println("There exist an account already with this email.");
             }   

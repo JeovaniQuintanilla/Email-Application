@@ -10,10 +10,10 @@ package com.mycompany.mailapplication.java;
  */
 public class Email {
     
-    private String sender;
-    private String recipient;
-    private String subject;
-    private String message;
+    protected String sender;
+    protected String recipient;
+    protected String subject;
+    protected String message;
 
     /**
      * Email Constructor 

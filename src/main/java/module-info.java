@@ -8,6 +8,6 @@ module com.mycompany.mailapplication.java {
     requires com.google.auth;
     requires com.google.api.apicommon;
  
-    opens com.mycompany.mailapplication.java to javafx.fxml;
+    opens com.mycompany.mailapplication.java to javafx.fxml, com.google.cloud.firestore, com.google.gson;
     exports com.mycompany.mailapplication.java; 
 }

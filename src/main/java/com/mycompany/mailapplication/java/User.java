@@ -10,10 +10,10 @@ package com.mycompany.mailapplication.java;
  * Purpose: this class defines a user
  */
 public class User {
-    private String fName;
-    private String lName;
-    private String emailAddr;
-    private String password;
+    protected String fName;
+    protected String lName;
+    protected String emailAddr;
+    protected String password;
  
     /**
      * @param fName

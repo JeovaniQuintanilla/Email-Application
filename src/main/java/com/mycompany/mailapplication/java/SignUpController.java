@@ -52,9 +52,9 @@ public class SignUpController {
         String last = lnameField.getText();
         String email = emailField.getText();
         String pword = pwordField.getText();
-        FirebaseInitialize fb = FirebaseInitialize.getInstance();
+        //FirebaseInitialize fb = FirebaseInitialize.getInstance();
         User new_user = new User(first,last,email,pword);
-        fb.addToFirebase(new_user);
+        //fb.addToFirebase(new_user);
         
         FirebaseInitialize.getInstance().addToFirebase(new_user);
         System.out.println("New User Created: " + new_user.getfName()+" "+ new_user.getlName());

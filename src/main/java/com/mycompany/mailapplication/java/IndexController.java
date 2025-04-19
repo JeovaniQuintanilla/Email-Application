@@ -46,7 +46,8 @@ public class IndexController implements Initializable {
         if (emails != null && !emails.isEmpty()) {
             //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
             for (Email email : emails) {
-                listView.getItems().addAll("New email from - " + email.getSender());
+                listView.getItems().addAll("New email from - " + email.getSender() +"\n" +
+                email.getMessage());
             }
         } else {
             System.out.println("No emails found.");

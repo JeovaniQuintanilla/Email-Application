@@ -67,6 +67,11 @@ public class SignUpController {
       App.setRoot("SignIn");
     }
     
+    public static void toSignUpScreen() throws IOException{
+      App.setRoot("SignUp");
+    }
+    
+    
       
 
 }

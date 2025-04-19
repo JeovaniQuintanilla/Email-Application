@@ -82,7 +82,7 @@ public class FirebaseInitialize {
         QuerySnapshot querySnapshot = query.get();
         for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {// Iterate over documents and print out the email and password fields
             
-            System.out.println("Document - email: " + document.getString("email") +", password: "+document.getString("pword"));
+            //System.out.println("Document - email: " + document.getString("email") +", password: "+document.getString("pword"));
             //Temporary fix - delete after fixing read and loading issues (emails and users)
             if(email.equals(document.getString("email")) && password.equals(document.getString("pword"))){
                 flag = true;

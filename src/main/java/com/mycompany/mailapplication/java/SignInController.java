@@ -41,26 +41,8 @@ public class SignInController implements Initializable{
     
     @FXML
     void GoToSignUp(MouseEvent event) throws IOException {
-        App.setRoot("SignUp");
+        SignUpController.toSignInScreen();
     }
-    
-    private Boolean verifyCreds() {
-        String email = emailField.getText();
-        String password = pwordField.getText();
-        if (emailField.getText().isBlank() || pwordField.getText().isBlank()){
-            return false;
-        }
-            //String testemail = "jeo@gmail.com";
-            //String testPword = "123abc";
-            //boolean flag = true;
-            //if(!email.equals(testemail) || !password.equals(testPword)){
-            //flag = false;
-            //}
-            //System.out.println(flag);
-            
-        return FirebaseInitialize.getInstance().readFromFirebase(email, password);        
-    }
-    
     
     @FXML
     void SignIn(ActionEvent event) throws IOException {
@@ -75,5 +57,15 @@ public class SignInController implements Initializable{
         }else{
             System.out.println("Credentials are invalid");
         }
+    }
+    
+    private Boolean verifyCreds() {
+        String email = emailField.getText();
+        String password = pwordField.getText();
+        if (emailField.getText().isBlank() || pwordField.getText().isBlank()){
+            return false;
+        }
+            
+        return FirebaseInitialize.getInstance().readFromFirebase(email, password);        
     }
 }

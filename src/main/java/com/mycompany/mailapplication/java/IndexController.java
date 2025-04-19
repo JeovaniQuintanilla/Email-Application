@@ -49,10 +49,9 @@ public class IndexController implements Initializable {
     @FXML
     private Label sent;
     
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
+
     }
 
     @FXML
@@ -62,7 +61,13 @@ public class IndexController implements Initializable {
    
     @FXML
     void displayDrafts(MouseEvent event) {
-
+        int count = listView.getItems().size();
+        if (count != 0){
+            listView.getItems().clear();
+        }
+        System.out.print("\nLoading Drafts has not been created but works");
+        count = listView.getItems().size();
+        System.out.print("\nCurrent Listview: " + count);
     }
 
     @FXML
@@ -72,8 +77,9 @@ public class IndexController implements Initializable {
             listView.getItems().clear();
         }
         displayInbox();
+        count = listView.getItems().size();
         System.out.print("\nCurrent Listview: " + count);
-      
+
     }
 
     @FXML

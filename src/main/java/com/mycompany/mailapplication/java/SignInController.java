@@ -45,7 +45,6 @@ public class SignInController implements Initializable{
     }
     
     private Boolean verifyCreds() {
-        //fb = new FirebaseInitialize();
         String email = emailField.getText();
         String password = pwordField.getText();
         if (emailField.getText().isBlank() || pwordField.getText().isBlank()){

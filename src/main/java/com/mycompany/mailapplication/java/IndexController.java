@@ -84,6 +84,13 @@ public class IndexController implements Initializable {
 
     @FXML
     void displaySent(MouseEvent event) {
+        int count = listView.getItems().size();
+        if (count != 0){
+            listView.getItems().clear();
+        }
+        System.out.print("\nLoading Sent has not been created but works");
+        count = listView.getItems().size();
+        System.out.print("\nCurrent Listview: " + count);
 
     }
 

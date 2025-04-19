@@ -50,7 +50,11 @@ public class SignUpController {
         String pword = pwordField.getText();
         User new_user = new User(first,last,email,pword);
         FirebaseInitialize.getInstance().addToFirebase(new_user);
-        //System.out.println("New User Created: " + new_user.getfName()+" "+ new_user.getlName());
+        try{
+            toSignInScreen();
+        }catch(IOException e){
+            System.err.println("Failed to return to Login-In Screen");
+        }
     }
 
     @FXML

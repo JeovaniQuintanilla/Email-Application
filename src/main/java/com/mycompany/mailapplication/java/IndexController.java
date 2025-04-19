@@ -15,6 +15,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
+import javafx.scene.input.MouseEvent;
 import service.FirebaseInitialize;
 
 /**
@@ -42,7 +43,6 @@ public class IndexController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         List<Email> emails = retreiveEmails();
-       
         if (emails != null && !emails.isEmpty()) {
             //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
             for (Email email : emails) {
@@ -52,21 +52,36 @@ public class IndexController implements Initializable {
             System.out.println("No emails found.");
         }
     }
-       
-       
+
     @FXML
     void createEmail(ActionEvent event) {
 
     }
-    
+   
     @FXML
-    void logOut(ActionEvent event) throws IOException {
-        App.setRoot("SignIn");
-    }  
-    
-    
-    
-    
+    void displayDrafts(MouseEvent event) {
+
+    }
+
+    @FXML
+    void displayInbox(MouseEvent event) {
+
+    }
+
+    @FXML
+    void displaySent(MouseEvent event) {
+
+    }
+
+    @FXML
+    void goToSettingPage(MouseEvent event) {
+
+    }
+
+    @FXML
+    void logOut(MouseEvent event) throws IOException {
+        SignUpController.toSignInScreen();
+    }
    
     /**
      * User defined methods

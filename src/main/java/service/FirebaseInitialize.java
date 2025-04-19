@@ -148,8 +148,6 @@ public class FirebaseInitialize {
                 if(user.getEmailAddr().equals(document.getString("emailAddr"))){
                     flag = false;
                 }
-                //System.out.println("Email: " + email);
-               //System.out.println("Password: " + password);
             }
             if (flag == true){
                 Map<String, Object> userMap = new HashMap<>();

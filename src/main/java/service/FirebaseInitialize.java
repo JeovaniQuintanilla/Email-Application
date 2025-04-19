@@ -152,27 +152,27 @@ public class FirebaseInitialize {
                //System.out.println("Password: " + password);
             }
             if (flag == true){
-                //String emailaddr = user.getEmailAddr();
-                //String fName = user.getfName();
-                //String lName = user.getlName();
-                //String password = user.getPassword();
                 Map<String, Object> userMap = new HashMap<>();
                     userMap.put("fName", user.getfName());
                     userMap.put("lName", user.getlName());
                     userMap.put("emailAddr", user.getEmailAddr());
                     userMap.put("password", user.getPassword());
 
-                
                 ApiFuture<DocumentReference> result = db.collection("users").add(userMap);
                 DocumentReference ref = result.get();
                 System.out.print("New User Added to FireBase!");
-                /**
+                
                 //create a email subcollection for this user
                 Email greeting = new Email("JMail@organization.com", user.getEmailAddr(),"Welcome to Jmail!", 
                         "The team at JMail welcomes you to our application, we hope you enjoy :).");
                 //send greeting
-                ApiFuture<DocumentReference> greet = ref.collection("emails").add(greeting); 
-                System.out.println("\nGreeting Sent!! ");**/
+                Map<String, Object> emailMap = new HashMap<>();
+                    emailMap.put("message", greeting.getMessage());
+                    emailMap.put("recipient", greeting.getRecipient());
+                    emailMap.put("sender", greeting.getSender());
+                    emailMap.put("subject", greeting.getSubject());
+                ApiFuture<DocumentReference> greet = ref.collection("emails").add(emailMap); 
+                System.out.println("\nGreeting Sent!! ");
             }else{
                 System.out.println("There exist an account already with this email.");
             }   

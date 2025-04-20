@@ -134,6 +134,21 @@ public class IndexController implements Initializable {
             System.out.println("No emails found.");
         }
     }
+    
+       /**
+     * Displays the contents of Drafts
+    */
+    private void displayDrafts(){
+        List<Email> emails = retrieveDrafts();
+        if (emails != null && !emails.isEmpty()) {
+            //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
+            for (Email email : emails) {
+                listView.getItems().addAll("From" + email.getSender() + "\n" +email.getMessage());
+            }
+        } else {
+            System.out.println("No emails found.");
+        }
+    }
    
     /**
      * retrieves inbox form firebase
@@ -145,7 +160,6 @@ public class IndexController implements Initializable {
         //System.out.println("current user on index: "+ email);
         List<Email> emails = FirebaseInitialize.getInstance().loadInboxFromDB(email);
         return emails;
-  
     }
     /**
      * retrieves sent from firebase
@@ -157,6 +171,17 @@ public class IndexController implements Initializable {
         //System.out.println("current user on index: "+ email);
         List<Email> emails = FirebaseInitialize.getInstance().loadSentFromDB(email);
         return emails;
-  
+    }
+     /**
+     * retrieves drafts from firebase 
+     * (will need to be edited in the future)
+     * @return 
+     */
+     private List<Email> retrieveDrafts() {
+        FirebaseInitialize.initializeFB();
+        String email = SignInController.currentUser.getEmailAddr();
+        //System.out.println("current user on index: "+ email);
+        List<Email> emails = FirebaseInitialize.getInstance().loadDraftsFromDB(email);
+        return emails;
     }
 }

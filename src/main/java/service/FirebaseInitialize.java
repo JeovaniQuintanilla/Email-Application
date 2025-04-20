@@ -180,7 +180,14 @@ public class FirebaseInitialize {
                     SentMap.put("subject", greeting2.getSubject());
                 ApiFuture<DocumentReference> sent = ref.collection("sent").add(SentMap);
                 
-            
+                Email greeting3 = new Email("JMail@organization.com", user.getEmailAddr(),"Welcome to Your Drafts!!",
+                        "This is your drafts section of JMail, where all your emails that you've started but aren't ready to send will appear.");
+                Map<String, Object> draftsMap = new HashMap<>();
+                    draftsMap.put("message", greeting3.getMessage());
+                    draftsMap.put("recipient", greeting3.getRecipient());
+                    draftsMap.put("sender", greeting3.getSender());
+                    draftsMap.put("subject", greeting3.getSubject());
+                ApiFuture<DocumentReference> drafts = ref.collection("drafts").add(draftsMap);
                 
                 System.out.println("\nGreeting Sent!! ");
             }else{

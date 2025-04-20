@@ -103,41 +103,6 @@ public class FirebaseInitialize {
         return flag;  
     }
     
-    public List<Email> loadEmailsFromDB(String email) {
-         List<Email> emailList = new ArrayList<>();
-
-        try {
-            // Fetch the user document based on email
-            ApiFuture<QuerySnapshot> userQuery = db.collection("users").whereEqualTo("emailAddr", email).get();
-            QuerySnapshot userSnapshot = userQuery.get();
-
-            if (!userSnapshot.isEmpty()) {
-                String userId = userSnapshot.getDocuments().get(0).getId(); // Get user ID
-                System.out.println("User ID: " + userId);
-
-                // Fetch emails from the user's 'emails' subcollection
-                ApiFuture<QuerySnapshot> emailQuery = db.collection("users").document(userId).collection("emails").get();
-                QuerySnapshot emailSnapshot = emailQuery.get();
-
-                for (QueryDocumentSnapshot emailDoc : emailSnapshot.getDocuments()) {
-                    String sender = emailDoc.getString("sender");
-                    String recipient = emailDoc.getString("recipient");
-                    String subject = emailDoc.getString("subject");
-                    String message = emailDoc.getString("message");
-
-                    Email emailObj = new Email(sender, recipient, subject, message);
-                    emailList.add(emailObj);
-                }
-            } else {
-                System.out.println("No user found with email: " + email);
-            }
-        } catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        return emailList;
-    }
-    
     public void addToFirebase(User user){
         boolean flag = true;
         try {
@@ -201,6 +166,76 @@ public class FirebaseInitialize {
         }
     }
     
+    public List<Email> loadInboxFromDB(String email) {
+         List<Email> emailList = new ArrayList<>();
+
+        try {
+            // Fetch the user document based on email
+            ApiFuture<QuerySnapshot> userQuery = db.collection("users").whereEqualTo("emailAddr", email).get();
+            QuerySnapshot userSnapshot = userQuery.get();
+
+            if (!userSnapshot.isEmpty()) {
+                String userId = userSnapshot.getDocuments().get(0).getId(); // Get user ID
+                System.out.println("User ID: " + userId);
+
+                // Fetch emails from the user's 'emails' subcollection
+                ApiFuture<QuerySnapshot> emailQuery = db.collection("users").document(userId).collection("inbox").get();
+                QuerySnapshot emailSnapshot = emailQuery.get();
+
+                for (QueryDocumentSnapshot emailDoc : emailSnapshot.getDocuments()) {
+                    String sender = emailDoc.getString("sender");
+                    String recipient = emailDoc.getString("recipient");
+                    String subject = emailDoc.getString("subject");
+                    String message = emailDoc.getString("message");
+
+                    Email emailObj = new Email(sender, recipient, subject, message);
+                    emailList.add(emailObj);
+                }
+            } else {
+                System.out.println("No user found with email: " + email);
+            }
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return emailList;
+    }
+    
+    public List<Email> loadSentFromDB(String email) {
+         List<Email> emailList = new ArrayList<>();
+
+        try {
+            // Fetch the user document based on email
+            ApiFuture<QuerySnapshot> userQuery = db.collection("users").whereEqualTo("emailAddr", email).get();
+            QuerySnapshot userSnapshot = userQuery.get();
+
+            if (!userSnapshot.isEmpty()) {
+                String userId = userSnapshot.getDocuments().get(0).getId(); // Get user ID
+                System.out.println("User ID: " + userId);
+
+                // Fetch emails from the user's 'emails' subcollection
+                ApiFuture<QuerySnapshot> emailQuery = db.collection("users").document(userId).collection("sent").get();
+                QuerySnapshot emailSnapshot = emailQuery.get();
+
+                for (QueryDocumentSnapshot emailDoc : emailSnapshot.getDocuments()) {
+                    String sender = emailDoc.getString("sender");
+                    String recipient = emailDoc.getString("recipient");
+                    String subject = emailDoc.getString("subject");
+                    String message = emailDoc.getString("message");
+
+                    Email emailObj = new Email(sender, recipient, subject, message);
+                    emailList.add(emailObj);
+                }
+            } else {
+                System.out.println("No user found with email: " + email);
+            }
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        return emailList;
+    }
+   
     public static void main(String[] args) {
             FirebaseInitialize.initializeFB();
             FirebaseInitialize fb = FirebaseInitialize.getInstance();

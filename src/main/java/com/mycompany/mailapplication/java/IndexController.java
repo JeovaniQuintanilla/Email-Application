@@ -128,7 +128,7 @@ public class IndexController implements Initializable {
         FirebaseInitialize.initializeFB();
         String email = SignInController.currentUser.getEmailAddr();
         //System.out.println("current user on index: "+ email);
-        List<Email> emails = FirebaseInitialize.getInstance().loadEmailsFromDB(email);
+        List<Email> emails = FirebaseInitialize.getInstance().loadInboxFromDB(email);
         return emails;
   
     }

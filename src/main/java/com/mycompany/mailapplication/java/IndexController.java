@@ -52,7 +52,6 @@ public class IndexController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
     }
 
     @FXML
@@ -68,7 +67,7 @@ public class IndexController implements Initializable {
         }
         displayDrafts();
         count = listView.getItems().size();
-        System.out.print("\nCurrent Listview: " + count);
+        System.out.println("Current Listview: " + count);
     }
 
     @FXML
@@ -79,7 +78,7 @@ public class IndexController implements Initializable {
         }
         displayInbox();
         count = listView.getItems().size();
-        System.out.print("\nCurrent Listview: " + count);
+        System.out.println("Current Listview: " + count);
 
     }
 
@@ -91,7 +90,7 @@ public class IndexController implements Initializable {
         }
         displaySent();
         count = listView.getItems().size();
-        System.out.print("\nCurrent Listview: " + count);
+        System.out.println("Current Listview: " + count);
 
     }
 

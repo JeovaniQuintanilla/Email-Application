@@ -53,7 +53,7 @@ public class SignInController implements Initializable{
             String pass = pwordField.getText();
             currentUser.setEmailAddr(email);
             currentUser.setPassword(pass);
-            System.out.print("current user " + currentUser.getEmailAddr());
+            System.out.println("Current user " + currentUser.getEmailAddr());
            App.setRoot("Index");
            
         }else{

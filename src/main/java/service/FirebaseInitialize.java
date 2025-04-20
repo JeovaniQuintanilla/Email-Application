@@ -3,30 +3,25 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package service;
-import com.google.cloud.Service;
+//import com.google.cloud.Service;
 import com.google.api.core.ApiFuture;
 import com.google.auth.oauth2.GoogleCredentials;
 import com.google.cloud.firestore.DocumentReference;
 import com.google.cloud.firestore.Firestore;
 import com.google.cloud.firestore.QueryDocumentSnapshot;
 import com.google.cloud.firestore.QuerySnapshot;
-import com.google.cloud.firestore.WriteResult;
 import java.io.FileInputStream;
 
 import com.google.firebase.*;
 import com.google.firebase.cloud.FirestoreClient;
 import com.mycompany.mailapplication.java.Email;
 import com.mycompany.mailapplication.java.User;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
-
-
-
 
 /**
  *
@@ -58,8 +53,7 @@ public class FirebaseInitialize {
             System.out.println("Firebase initialization failed.");
         }
     }
-    
-    
+
     public static void initializeFB() {
           if (instance == null) {
             instance = new FirebaseInitialize();
@@ -72,7 +66,6 @@ public class FirebaseInitialize {
         }
         return instance;
     }
-    
     
     public Boolean readFromFirebase(String email, String password) {
         Boolean flag = false;

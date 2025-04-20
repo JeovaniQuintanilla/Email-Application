@@ -109,7 +109,22 @@ public class IndexController implements Initializable {
      * Displays the contents of inbox
     */
     private void displayInbox(){
-        List<Email> emails = retreiveEmails();
+        List<Email> emails = retrieveInbox();
+        if (emails != null && !emails.isEmpty()) {
+            //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
+            for (Email email : emails) {
+                listView.getItems().addAll("From" + email.getSender() + "\n" +email.getMessage());
+            }
+        } else {
+            System.out.println("No emails found.");
+        }
+    }
+    
+    /**
+     * Displays the contents of Sent
+    */
+    private void displaySent(){
+        List<Email> emails = retrieveSent();
         if (emails != null && !emails.isEmpty()) {
             //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
             for (Email email : emails) {
@@ -121,14 +136,26 @@ public class IndexController implements Initializable {
     }
    
     /**
-     * User defined methods
+     * retrieves inbox form firebase
      * @return 
      */
-    private List<Email> retreiveEmails() {
+    private List<Email> retrieveInbox() {
         FirebaseInitialize.initializeFB();
         String email = SignInController.currentUser.getEmailAddr();
         //System.out.println("current user on index: "+ email);
         List<Email> emails = FirebaseInitialize.getInstance().loadInboxFromDB(email);
+        return emails;
+  
+    }
+    /**
+     * retrieves sent from firebase
+     * @return 
+     */
+     private List<Email> retrieveSent() {
+        FirebaseInitialize.initializeFB();
+        String email = SignInController.currentUser.getEmailAddr();
+        //System.out.println("current user on index: "+ email);
+        List<Email> emails = FirebaseInitialize.getInstance().loadSentFromDB(email);
         return emails;
   
     }

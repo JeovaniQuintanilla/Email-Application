@@ -163,7 +163,7 @@ public class FirebaseInitialize {
                 //create a email subcollection for this user
                 Email greeting = new Email("JMail@organization.com", user.getEmailAddr(),"Welcome to Jmail!!", 
                         "The team at JMail welcomes you to our application, we hope you enjoy :).");
-                //send greeting
+                //create inbox sub-collection
                 Map<String, Object> inboxMap = new HashMap<>();
                     inboxMap.put("message", greeting.getMessage());
                     inboxMap.put("recipient", greeting.getRecipient());
@@ -173,6 +173,7 @@ public class FirebaseInitialize {
                 
                 Email greeting2 = new Email("JMail@organization.com", user.getEmailAddr(),"Welcome to Your Sent!!", 
                         "This is your sent section of JMail, where all your sent emails will appear.");
+                //create sent sub-collection
                 Map<String, Object> SentMap = new HashMap<>();
                     SentMap.put("message", greeting2.getMessage());
                     SentMap.put("recipient", greeting2.getRecipient());
@@ -182,6 +183,7 @@ public class FirebaseInitialize {
                 
                 Email greeting3 = new Email("JMail@organization.com", user.getEmailAddr(),"Welcome to Your Drafts!!",
                         "This is your drafts section of JMail, where all your emails that you've started but aren't ready to send will appear.");
+                //create drafts sub-collection
                 Map<String, Object> draftsMap = new HashMap<>();
                     draftsMap.put("message", greeting3.getMessage());
                     draftsMap.put("recipient", greeting3.getRecipient());
@@ -189,7 +191,7 @@ public class FirebaseInitialize {
                     draftsMap.put("subject", greeting3.getSubject());
                 ApiFuture<DocumentReference> drafts = ref.collection("drafts").add(draftsMap);
                 
-                System.out.println("\nGreeting Sent!! ");
+                System.out.println("\nGreeting Sent!! ");//send greeting
             }else{
                 System.out.println("There exist an account already with this email.");
             }   

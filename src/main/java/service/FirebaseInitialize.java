@@ -161,7 +161,7 @@ public class FirebaseInitialize {
                 System.out.print("New User Added to FireBase!");
                 
                 //create a email subcollection for this user
-                Email greeting = new Email("JMail@organization.com", user.getEmailAddr(),"Welcome to Jmail!", 
+                Email greeting = new Email("JMail@organization.com", user.getEmailAddr(),"Welcome to Jmail!!", 
                         "The team at JMail welcomes you to our application, we hope you enjoy :).");
                 //send greeting
                 Map<String, Object> inboxMap = new HashMap<>();
@@ -169,7 +169,19 @@ public class FirebaseInitialize {
                     inboxMap.put("recipient", greeting.getRecipient());
                     inboxMap.put("sender", greeting.getSender());
                     inboxMap.put("subject", greeting.getSubject());
-                ApiFuture<DocumentReference> greet = ref.collection("emails").add(inboxMap); 
+                ApiFuture<DocumentReference> greet = ref.collection("inbox").add(inboxMap); 
+                
+                Email greeting2 = new Email("JMail@organization.com", user.getEmailAddr(),"Welcome to Your Sent!!", 
+                        "This is your sent section of JMail, where all your sent emails will appear.");
+                Map<String, Object> SentMap = new HashMap<>();
+                    SentMap.put("message", greeting2.getMessage());
+                    SentMap.put("recipient", greeting2.getRecipient());
+                    SentMap.put("sender", greeting2.getSender());
+                    SentMap.put("subject", greeting2.getSubject());
+                ApiFuture<DocumentReference> sent = ref.collection("sent").add(SentMap);
+                
+            
+                
                 System.out.println("\nGreeting Sent!! ");
             }else{
                 System.out.println("There exist an account already with this email.");

@@ -66,7 +66,7 @@ public class IndexController implements Initializable {
         if (count != 0){
             listView.getItems().clear();
         }
-        System.out.print("\nLoading Drafts has not been created but works");
+        displayDrafts();
         count = listView.getItems().size();
         System.out.print("\nCurrent Listview: " + count);
     }
@@ -89,7 +89,7 @@ public class IndexController implements Initializable {
         if (count != 0){
             listView.getItems().clear();
         }
-        System.out.print("\nLoading Sent has not been created but works");
+        displaySent();
         count = listView.getItems().size();
         System.out.print("\nCurrent Listview: " + count);
 

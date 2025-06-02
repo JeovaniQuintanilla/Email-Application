@@ -53,6 +53,13 @@ public class IndexController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
     }
+    
+    
+    void creatPopUp(){
+        /**
+         * creates a popup window
+         */
+    }
 
     @FXML
     void createEmail(ActionEvent event) {

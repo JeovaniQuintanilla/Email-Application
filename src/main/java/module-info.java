@@ -7,6 +7,7 @@ module com.mycompany.mailapplication.java {
     requires com.google.auth.oauth2;
     requires com.google.auth;
     requires com.google.api.apicommon;
+    requires java.base;
  
     opens com.mycompany.mailapplication.java to javafx.fxml, com.google.cloud.firestore, com.google.gson;
     exports com.mycompany.mailapplication.java; 

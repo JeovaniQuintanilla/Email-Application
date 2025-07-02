@@ -13,12 +13,17 @@ import javafx.collections.ObservableList;
 import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 import service.FirebaseInitialize;
 
 /**
@@ -55,16 +60,18 @@ public class IndexController implements Initializable {
         displayInbox();
     }
     
-    
-    void creatPopUp(){
-        /**
-         * creates a popup window
-         */
-    }
-
+    /**
+     * 
+     * Purpose: Opens a popup window to create a email
+    */
     @FXML
-    void createEmail(ActionEvent event) {
-
+    void createEmail(ActionEvent event) throws IOException {
+        Stage g = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("writeEmailPopUp.fxml"));
+        AnchorPane pane = loader.load();
+        Scene s = new Scene(pane);
+        g.setScene(s);
+        g.show();
     }
    
     @FXML

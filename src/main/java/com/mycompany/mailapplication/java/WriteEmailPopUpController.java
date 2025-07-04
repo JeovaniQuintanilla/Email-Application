@@ -18,6 +18,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
+import service.FirebaseInitialize;
 
 /**
  * FXML Controller class
@@ -50,13 +51,14 @@ public class WriteEmailPopUpController implements Initializable {
     @FXML
     private TextField subjField;
     
-    private static Firestore db;
+    //private static Firestore db;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+        //FirebaseInitialize.initializeFB();
     }   
     
     @FXML
@@ -71,7 +73,25 @@ public class WriteEmailPopUpController implements Initializable {
 
     @FXML
     void send(ActionEvent event) {
+         try{
+            ApiFuture<QuerySnapshot> query = FirebaseInitialize.db.collection("users").get();// Fetch all documents from 'users' collection
+            QuerySnapshot querySnapshot = query.get();
+            for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {
+                if (!document.getString("emailAddr").equals(receiverField.getText())){
+                    System.out.println("There is no account that exists with this email - " + document.getString("emailAddr"));
+                    
+                }else{
+                    System.out.println("Account: " + document.getString("emailAddr")+ " found.");
+                    break;
+                }
+                
+            }
+        }catch (InterruptedException | ExecutionException ex) {
+            System.err.println("Unable to reach Firebase, User not added");
+        }
         
+
+    
     }
     
 }

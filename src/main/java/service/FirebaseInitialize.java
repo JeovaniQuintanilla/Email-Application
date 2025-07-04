@@ -30,7 +30,7 @@ import java.util.concurrent.ExecutionException;
 
 public class FirebaseInitialize {
     private static FirebaseInitialize instance;
-    private static Firestore db;// Initialize Firestore instance
+    public static Firestore db;// Initialize Firestore instance
     
     
     private FirebaseInitialize() {

@@ -6,8 +6,12 @@ package com.mycompany.mailapplication.java;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 
 /**
@@ -19,6 +23,27 @@ public class WriteEmailPopUpController implements Initializable {
     
     @FXML
     private AnchorPane writeEmail;
+    
+    @FXML
+    private Button draftBtn;
+
+    @FXML
+    private TextArea messageField;
+
+    @FXML
+    private TextField receiverField;
+
+    @FXML
+    private Button replyBtn;
+
+    @FXML
+    private Button sendBtn;
+
+    @FXML
+    private TextField senderField;
+
+    @FXML
+    private TextField subjField;
 
 
     /**
@@ -26,8 +51,21 @@ public class WriteEmailPopUpController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        
-    }    
+    }   
+    
+    @FXML
+    void drafts(ActionEvent event) {
+
+    }
+
+    @FXML
+    void reply(ActionEvent event) {
+
+    }
+
+    @FXML
+    void send(ActionEvent event) {
+
+    }
     
 }

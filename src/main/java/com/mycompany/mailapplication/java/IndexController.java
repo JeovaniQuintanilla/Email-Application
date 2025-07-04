@@ -129,7 +129,7 @@ public class IndexController implements Initializable {
         if (emails != null && !emails.isEmpty()) {
             //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
             for (Email email : emails) {
-                listView.getItems().addAll("From" + email.getSender() + "\n" +email.getMessage());
+                listView.getItems().addAll("From: " + email.getSender() + "\n" +email.getMessage());
             }
         } else {
             System.out.println("No emails found.");
@@ -144,7 +144,7 @@ public class IndexController implements Initializable {
         if (emails != null && !emails.isEmpty()) {
             //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
             for (Email email : emails) {
-                listView.getItems().addAll("From" + email.getSender() + "\n" +email.getMessage());
+                listView.getItems().addAll("From: " + email.getSender() + "\n" +email.getMessage());
             }
         } else {
             System.out.println("No emails found.");
@@ -159,7 +159,7 @@ public class IndexController implements Initializable {
         if (emails != null && !emails.isEmpty()) {
             //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
             for (Email email : emails) {
-                listView.getItems().addAll("From" + email.getSender() + "\n" +email.getMessage());
+                listView.getItems().addAll("From: " + email.getSender() + "\n" +email.getMessage());
             }
         } else {
             System.out.println("No emails found.");

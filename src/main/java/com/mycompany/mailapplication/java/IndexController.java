@@ -55,6 +55,8 @@ public class IndexController implements Initializable {
     @FXML
     private Label sent;
     
+    public static Stage popUpStage;
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         displayInbox();
@@ -66,12 +68,12 @@ public class IndexController implements Initializable {
     */
     @FXML
     void createEmail(ActionEvent event) throws IOException {
-        Stage g = new Stage();
+        popUpStage = new Stage();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("writeEmailPopUp.fxml"));
         AnchorPane pane = loader.load();
         Scene s = new Scene(pane);
-        g.setScene(s);
-        g.show();
+        popUpStage.setScene(s);
+        popUpStage.show();
     }
    
     @FXML

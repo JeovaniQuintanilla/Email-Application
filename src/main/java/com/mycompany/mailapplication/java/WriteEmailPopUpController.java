@@ -4,8 +4,13 @@
  */
 package com.mycompany.mailapplication.java;
 
+import com.google.api.core.ApiFuture;
+import com.google.cloud.firestore.Firestore;
+import com.google.cloud.firestore.QueryDocumentSnapshot;
+import com.google.cloud.firestore.QuerySnapshot;
 import java.net.URL;
 import java.util.ResourceBundle;
+import java.util.concurrent.ExecutionException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -44,7 +49,8 @@ public class WriteEmailPopUpController implements Initializable {
 
     @FXML
     private TextField subjField;
-
+    
+    private static Firestore db;
 
     /**
      * Initializes the controller class.
@@ -65,7 +71,7 @@ public class WriteEmailPopUpController implements Initializable {
 
     @FXML
     void send(ActionEvent event) {
-
+        
     }
     
 }

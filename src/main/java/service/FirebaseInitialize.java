@@ -92,7 +92,7 @@ public class FirebaseInitialize {
                 ex.getMessage();
                 return false;
                
-         } System.out.println(flag);
+         } //System.out.println(flag);
         return flag;  
     }
     

@@ -68,11 +68,37 @@ public class WriteEmailPopUpController implements Initializable {
     
     @FXML
     void drafts(ActionEvent event) {
-
-    }
-
-    @FXML
-    void reply(ActionEvent event) {
+        
+        try{
+            String id = " ";
+            ApiFuture<QuerySnapshot> query = FirebaseInitialize.db.collection("users").get();// Fetch all documents from 'users' collection
+            QuerySnapshot querySnapshot = query.get();
+            for (QueryDocumentSnapshot doc : querySnapshot.getDocuments()) {
+                if (SignInController.currentUser.getEmailAddr().equals(doc.getString("emailAddr"))){
+                    id = doc.getId();
+                    System.out.println("ID for account was found. " + id);
+                    break;
+                }
+                System.out.println("ID was not found"); 
+            }
+            
+            if (!id.isEmpty()){
+                DocumentReference ref =  db.collection("users").document(id); 
+                Map<String, Object> draftEmail = new HashMap<>();
+                draftEmail.put("message", messageField.getText());
+                draftEmail.put("recipient", receiverField.getText());
+                draftEmail.put("sender", senderField.getText());
+                draftEmail.put("subject", subjField.getText());                    
+                CollectionReference draftRef = ref.collection("drafts");
+                ApiFuture<DocumentReference> draftResult = draftRef.add(draftEmail);
+                IndexController.popUpStage.close();
+            }else{
+                System.out.println("Failed to save drafts.");
+            }
+            
+        }catch (InterruptedException | ExecutionException ex) {
+            System.err.println("Unable to reach Firebase, User not added");
+        }
 
     }
 
@@ -103,9 +129,11 @@ public class WriteEmailPopUpController implements Initializable {
         }catch (InterruptedException | ExecutionException ex) {
             System.err.println("Unable to reach Firebase, User not added");
         }
-        
-
+    }
     
+    @FXML
+    void reply(ActionEvent event) {
+
     }
     
 }

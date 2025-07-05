@@ -53,7 +53,7 @@ public class SignInController implements Initializable{
             currentUser.setEmailAddr(email);
             currentUser.setPassword(pass);
             System.out.println("Current user " + currentUser.getEmailAddr());
-           App.setRoot("Index");
+            App.setRoot("Index");
            
         }else{
             System.out.println("Credentials are invalid");

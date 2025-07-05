@@ -9,7 +9,7 @@
 
 <AnchorPane fx:id="SignIn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.SignInController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0b4072" height="579.0" layoutX="-5.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="387.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8d8a8a" height="579.0" layoutX="-5.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="387.0" />
       <ImageView fitHeight="135.0" fitWidth="161.0" layoutX="96.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true" />
       <Button fx:id="SignInBtn" layoutX="524.0" layoutY="301.0" mnemonicParsing="false" onAction="#SignIn" prefHeight="48.0" prefWidth="117.0" text="SignIn" />
       <TextField fx:id="pwordField" layoutX="489.0" layoutY="240.0" prefHeight="32.0" prefWidth="187.0" promptText="Password:" />

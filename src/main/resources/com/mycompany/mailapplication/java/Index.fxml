@@ -16,8 +16,8 @@
 
 <AnchorPane id="AnchorPane" prefHeight="573.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.IndexController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#05315b" height="492.0" layoutX="-3.0" layoutY="81.0" stroke="BLACK" strokeType="INSIDE" width="225.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#1e62a1" height="67.0" layoutX="-1.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" width="787.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#888e94" height="492.0" layoutX="-3.0" layoutY="81.0" stroke="BLACK" strokeType="INSIDE" width="225.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b3b6b9" height="67.0" layoutX="-1.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" width="787.0" />
       <ListView fx:id="listView" layoutX="222.0" layoutY="125.0" prefHeight="448.0" prefWidth="563.0" />
       <VBox fx:id="mailNav" alignment="TOP_CENTER" layoutX="8.0" layoutY="177.0" prefHeight="147.0" prefWidth="170.0">
          <children>

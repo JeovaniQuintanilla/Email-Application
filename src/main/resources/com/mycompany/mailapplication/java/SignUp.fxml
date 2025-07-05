@@ -8,7 +8,7 @@
 
 <AnchorPane fx:id="SignUp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.SignUpController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#0b4072" height="579.0" layoutX="-5.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="387.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#828283" height="579.0" layoutX="-5.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="387.0" />
       <TextField fx:id="fnameField" layoutX="410.0" layoutY="142.0" prefHeight="32.0" prefWidth="149.0" promptText="First Name" />
       <TextField fx:id="emailField" layoutX="410.0" layoutY="208.0" prefHeight="32.0" prefWidth="332.0" promptText="Email Address" />
       <TextField fx:id="lnameField" layoutX="593.0" layoutY="142.0" prefHeight="32.0" prefWidth="149.0" promptText="Last Name" />

@@ -204,9 +204,12 @@ public class IndexController implements Initializable {
     }
 
     @FXML
-    private void viewEmail(MouseEvent event) {
-        
-        
-        
+    private void viewEmail(MouseEvent event) throws IOException {
+        popUpStage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("viewEmailPopUp.fxml"));
+        AnchorPane pane2 = loader.load();
+        Scene s = new Scene(pane2);
+        popUpStage.setScene(s);
+        popUpStage.show();
     }
 }

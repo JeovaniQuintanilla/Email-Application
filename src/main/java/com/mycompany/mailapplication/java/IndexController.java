@@ -202,4 +202,11 @@ public class IndexController implements Initializable {
         List<Email> emails = FirebaseInitialize.getInstance().loadDraftsFromDB(email);
         return emails;
     }
+
+    @FXML
+    private void viewEmail(MouseEvent event) {
+        
+        
+        
+    }
 }

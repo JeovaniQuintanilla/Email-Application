@@ -18,7 +18,7 @@
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#888e94" height="492.0" layoutX="-3.0" layoutY="81.0" stroke="BLACK" strokeType="INSIDE" width="225.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b3b6b9" height="67.0" layoutX="-1.0" layoutY="19.0" stroke="BLACK" strokeType="INSIDE" width="787.0" />
-      <ListView fx:id="listView" layoutX="222.0" layoutY="125.0" prefHeight="448.0" prefWidth="563.0" />
+      <ListView fx:id="listView" layoutX="222.0" layoutY="125.0" onMouseClicked="#viewEmail" prefHeight="448.0" prefWidth="563.0" />
       <VBox fx:id="mailNav" alignment="TOP_CENTER" layoutX="8.0" layoutY="177.0" prefHeight="147.0" prefWidth="170.0">
          <children>
             <Label fx:id="inbox" alignment="CENTER" onMouseClicked="#displayInbox" prefHeight="32.0" prefWidth="109.0" text="Inbox" textFill="#eee7e7">

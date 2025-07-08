@@ -47,6 +47,7 @@ public class ViewEmailPopUpController implements Initializable {
     }
     void setTextArea(String s){
         msgLabel.setText(s);
+        msgLabel.setEditable(false);
     }
     
     

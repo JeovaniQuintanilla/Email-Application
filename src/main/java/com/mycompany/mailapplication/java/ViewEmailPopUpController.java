@@ -32,7 +32,22 @@ public class ViewEmailPopUpController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+       
         // TODO
-    }    
+    } 
+   
+    void setSndrLabel(String s){
+        sndrLabel.setText(s);
+    }
+    void setRecvrLabel(String s){
+        recLabel.setText(s);
+    }
+    void setSubjLabel(String s){
+        subjLabel.setText(s);
+    }
+    void setTextArea(String s){
+        msgLabel.setText(s);
+    }
+    
     
 }

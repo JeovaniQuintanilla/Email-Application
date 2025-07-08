@@ -210,13 +210,19 @@ public class IndexController implements Initializable {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("viewEmailPopUp.fxml"));
         AnchorPane pane2 = loader.load();
         Scene s = new Scene(pane2);
-        popUpStage.setScene(s);
-        popUpStage.show();
+        ViewEmailPopUpController popUp = loader.getController(); //gives access to the controller before showing it
         String sender = listView.getSelectionModel().selectedItemProperty().getValue().getSender();
         String receiver = listView.getSelectionModel().selectedItemProperty().getValue().getRecipient();
         String subj = listView.getSelectionModel().selectedItemProperty().getValue().getSubject();
         String message = listView.getSelectionModel().selectedItemProperty().getValue().getMessage();
-        //System.out.println(sender + " ,\n " + receiver + ",\n " + subj + ",\n " + message);
         
+        popUp.setSndrLabel(sender);
+        popUp.setRecvrLabel(receiver);
+        popUp.setSubjLabel(subj);
+        popUp.setTextArea(message);
+        
+        //System.out.println(sender + " ,\n " + receiver + ",\n " + subj + ",\n " + message);
+        popUpStage.setScene(s);
+        popUpStage.show();
     }
 }

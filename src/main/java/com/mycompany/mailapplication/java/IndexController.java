@@ -48,7 +48,7 @@ public class IndexController implements Initializable {
     private Label inbox;
 
     @FXML
-    private ListView<String> listView;
+    private ListView<Email> listView;
 
     @FXML
     private VBox mailNav;
@@ -131,7 +131,7 @@ public class IndexController implements Initializable {
         if (emails != null && !emails.isEmpty()) {
             //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
             for (Email email : emails) {
-                listView.getItems().addAll("From: " + email.getSender() + "\n" +email.getMessage());
+                listView.getItems().addAll(email);
             }
         } else {
             System.out.println("No emails found.");
@@ -146,7 +146,8 @@ public class IndexController implements Initializable {
         if (emails != null && !emails.isEmpty()) {
             //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
             for (Email email : emails) {
-                listView.getItems().addAll("From: " + email.getSender() + "\n" +email.getMessage());
+                listView.getItems().addAll(email);
+                //"From: " + email.getSender() + "\n" +email.getMessage()
             }
         } else {
             System.out.println("No emails found.");
@@ -161,7 +162,7 @@ public class IndexController implements Initializable {
         if (emails != null && !emails.isEmpty()) {
             //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
             for (Email email : emails) {
-                listView.getItems().addAll("From: " + email.getSender() + "\n" +email.getMessage());
+                listView.getItems().addAll(email);
             }
         } else {
             System.out.println("No emails found.");
@@ -211,5 +212,12 @@ public class IndexController implements Initializable {
         Scene s = new Scene(pane2);
         popUpStage.setScene(s);
         popUpStage.show();
+        //System.out.println(listView.getSelectionModel().selectedItemProperty().getValue());
+        String sender = listView.getSelectionModel().selectedItemProperty().getValue().getSender();
+        String receiver = listView.getSelectionModel().selectedItemProperty().getValue().getRecipient();
+        String subj = listView.getSelectionModel().selectedItemProperty().getValue().getSubject();
+        String message = listView.getSelectionModel().selectedItemProperty().getValue().getMessage();
+        System.out.println(sender + " ,\n " + receiver + ",\n " + subj + ",\n " + message);
+        
     }
 }

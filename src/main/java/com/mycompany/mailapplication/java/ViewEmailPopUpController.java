@@ -6,7 +6,10 @@ package com.mycompany.mailapplication.java;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
 
 /**
  * FXML Controller class
@@ -14,6 +17,15 @@ import javafx.fxml.Initializable;
  * @author jeova
  */
 public class ViewEmailPopUpController implements Initializable {
+
+    @FXML
+    private TextArea msgLabel;
+    @FXML
+    private Label sndrLabel;
+    @FXML
+    private Label subjLabel;
+    @FXML
+    private Label recLabel;
 
     /**
      * Initializes the controller class.

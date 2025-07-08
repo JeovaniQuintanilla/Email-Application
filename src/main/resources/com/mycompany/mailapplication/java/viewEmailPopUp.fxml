@@ -33,8 +33,11 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TextArea layoutX="29.0" layoutY="169.0" prefHeight="184.0" prefWidth="542.0" />
+      <TextArea fx:id="msgLabel" layoutX="29.0" layoutY="169.0" prefHeight="184.0" prefWidth="542.0" />
       <Button layoutX="479.0" layoutY="365.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="76.0" text="Reply" />
       <Button layoutX="374.0" layoutY="365.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="76.0" text="Forward" />
+      <Label fx:id="sndrLabel" layoutX="62.0" layoutY="48.0" prefHeight="17.0" prefWidth="175.0" text="Label" />
+      <Label fx:id="subjLabel" layoutX="76.0" layoutY="94.0" prefHeight="17.0" prefWidth="175.0" text="Label" />
+      <Label fx:id="recLabel" layoutX="325.0" layoutY="48.0" prefHeight="17.0" prefWidth="175.0" text="Label" />
    </children>
 </AnchorPane>

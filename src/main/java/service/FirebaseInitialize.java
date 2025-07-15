@@ -180,7 +180,8 @@ public class FirebaseInitialize {
                     String recipient = emailDoc.getString("recipient");
                     String subject = emailDoc.getString("subject");
                     String message = emailDoc.getString("message");
-
+                    System.out.println(sender +"\n "+ recipient + "\n " + subject + "\n " + message);
+                     
                     Email emailObj = new Email(sender, recipient, subject, message);
                     emailList.add(emailObj);
                 }
@@ -215,6 +216,7 @@ public class FirebaseInitialize {
                     String recipient = emailDoc.getString("recipient");
                     String subject = emailDoc.getString("subject");
                     String message = emailDoc.getString("message");
+                    //System.out.println(sender +"\n "+ recipient + "\n " + subject + "\n " + message);
 
                     Email emailObj = new Email(sender, recipient, subject, message);
                     emailList.add(emailObj);

@@ -114,7 +114,7 @@ public class IndexController implements Initializable {
 
     @FXML
     void goToSettingPage(MouseEvent event) {
-
+        //App.setRoot("Settings");
     }
 
     @FXML

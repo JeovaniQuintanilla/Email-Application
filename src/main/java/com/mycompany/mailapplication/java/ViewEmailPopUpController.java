@@ -26,7 +26,16 @@ public class ViewEmailPopUpController implements Initializable {
     private Label subjLabel;
     @FXML
     private Label recLabel;
-
+    
+    
+    /**TO-DO: - this is a list of commits I plan to implement into this section
+     * 1 - implement forward method/button
+     * 2 - implement reply method/button
+     * 3 - add logo image
+    * 
+    */
+    
+    
     /**
      * Initializes the controller class.
      */

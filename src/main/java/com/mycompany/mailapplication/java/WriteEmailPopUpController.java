@@ -61,6 +61,7 @@ public class WriteEmailPopUpController implements Initializable {
      * 1 - edit textArea text display boundaries
      * 2 - dropdown feature on textfield
      * 3 - add logo image
+     * 4 - remove reply button
     * 
     */
 

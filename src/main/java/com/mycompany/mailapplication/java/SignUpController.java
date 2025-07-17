@@ -36,6 +36,12 @@ public class SignUpController {
     @FXML
     private Button signupBtn;
     
+     /**TO-DO: - this is a list of commits I plan to implement into this section
+     * 1 - edit with css
+     * 2 - add logo image
+     * 3 - add profile pic with every account
+     * 
+    */
     
     public void initialize(URL url, ResourceBundle rb) {
         FirebaseInitialize.initializeFB();

@@ -30,6 +30,12 @@ public class SignInController implements Initializable{
     @FXML
     private Label signupText;
     
+    /**TO-DO: - this is a list of commits I plan to implement into this section
+     * 1 - edit with css
+     * 2 - add logo image
+    */
+    
+    
     /**
      * Reference to the Current User Logged in
      */

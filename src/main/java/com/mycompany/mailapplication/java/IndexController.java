@@ -58,6 +58,17 @@ public class IndexController implements Initializable {
     
     public static Stage popUpStage;
     
+    
+    /**TO-DO: - this is a list of commits I plan to implement into this section
+     * 1 - display methods simplified into one depending on a variable (holding the current window)
+     * 2 - figure out the order the emails load/send in - want from most recent to less recent
+     * 3 - implement settings page
+     * 4 - implement search bar
+     * 5 - add images
+     * 6 - edit with css
+     * 
+    */
+    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         displayInbox();

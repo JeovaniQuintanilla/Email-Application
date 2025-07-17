@@ -56,7 +56,11 @@ public class WriteEmailPopUpController implements Initializable {
     @FXML
     private TextField subjField;
     
-    //private static Firestore db;
+
+    /**TO-DO: - this is a list of commits I plan to implement into this section
+     * 1 - 
+    * 
+    */
 
     /**
      * Initializes the controller class.

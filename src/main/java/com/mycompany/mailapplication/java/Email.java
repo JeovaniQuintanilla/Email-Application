@@ -99,8 +99,17 @@ public class Email {
         return message;
     }
     
-
-    
-    
+    /**
+     * String format for displaying in ListView
+     */
+    @Override
+    public String toString() {
+        String messagePreview = message != null && message.length() > 40 
+            ? message.substring(0, 40) + "..." 
+            : message;
+        return "From: " + sender + "\n" +
+               "Subject: " + subject + "\n" +
+               "Message: " + messagePreview;
+    }
     
 }

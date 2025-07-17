@@ -111,5 +111,7 @@ public class Email {
                "Subject: " + subject + "\n" +
                "Message: " + messagePreview;
     }
+    // in the future if i want to do any extra csss(fonts/images/etc..) need to
+    // edit listview cellfactory
     
 }

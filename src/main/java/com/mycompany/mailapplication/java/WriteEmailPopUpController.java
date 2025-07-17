@@ -58,7 +58,9 @@ public class WriteEmailPopUpController implements Initializable {
     
 
     /**TO-DO: - this is a list of commits I plan to implement into this section
-     * 1 - 
+     * 1 - edit textArea text display boundaries
+     * 2 - dropdown feature on textfield
+     * 3 - add logo image
     * 
     */
 

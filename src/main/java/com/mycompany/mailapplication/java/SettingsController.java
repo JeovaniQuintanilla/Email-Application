@@ -13,6 +13,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -41,6 +42,8 @@ public class SettingsController implements Initializable {
 
     @FXML
     private TextField pwordField;
+    @FXML
+    private AnchorPane setting;
 
     /**
      * Initializes the controller class.
@@ -63,6 +66,10 @@ public class SettingsController implements Initializable {
     @FXML
     void saveSettings(ActionEvent event) {
 
+    }
+
+    @FXML
+    private void exitSettings(MouseEvent event) {
     }
     
 }

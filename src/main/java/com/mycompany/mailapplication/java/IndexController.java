@@ -110,8 +110,10 @@ public class IndexController implements Initializable {
     
 
     @FXML
-    void goToSettingPage(MouseEvent event) {
-        //App.setRoot("Settings");
+    void goToSettingPage(MouseEvent event) throws IOException {
+        App.setRoot("Settings");
+        App.getStage().sizeToScene();
+        
     }
 
     @FXML

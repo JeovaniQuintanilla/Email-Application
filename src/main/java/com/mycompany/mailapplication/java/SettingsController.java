@@ -52,6 +52,10 @@ public class SettingsController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        fnField.setText(SignInController.currentUser.getfName());
+        lnField.setText(SignInController.currentUser.getlName());
+        emailField.setText(SignInController.currentUser.getEmailAddr());
+        pwordField.setText(SignInController.currentUser.getPassword());
     }
 
     @FXML

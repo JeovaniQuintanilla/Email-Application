@@ -31,8 +31,7 @@ import java.util.concurrent.ExecutionException;
 public class FirebaseInitialize {
     private static FirebaseInitialize instance;
     public static Firestore db;// Initialize Firestore instance
-    
-    
+
     private FirebaseInitialize() {
         try {
             if (FirebaseApp.getApps().isEmpty()) {
@@ -67,33 +66,26 @@ public class FirebaseInitialize {
         return instance;
     }
     
-    public Boolean readFromFirebase(String email, String password) {
-        Boolean flag = false;
-        
+    public User readFromFirebase(String email, String password) {
         try{
         ApiFuture<QuerySnapshot> query = db.collection("users").get();// Fetch all documents from 'users' collection
         QuerySnapshot querySnapshot = query.get();
         for (QueryDocumentSnapshot document : querySnapshot.getDocuments()) {// Iterate over documents and print out the email and password fields
-            
-            //System.out.println("Document - email: " + document.getString("email") +", password: "+document.getString("pword"));
-            //Temporary fix - delete after fixing read and loading issues (emails and users)
-            if(email.equals(document.getString("email")) && password.equals(document.getString("pword"))){
-                flag = true;
-                break;
-            }
             if(email.equals(document.getString("emailAddr")) && password.equals(document.getString("password"))){
-                flag = true;
-                break;
+                User userfound = new User();
+                userfound.setfName(document.getString("fName"));
+                userfound.setlName(document.getString("lName"));
+                return userfound;
+                //System.out.println("Found-> "+userfound.getfName());
+                //flag = true;
+                //break;
             }
-            //System.out.println("Email: " + email);
-           //System.out.println("Password: " + password);
         }
        }catch (ExecutionException | InterruptedException ex) {
-                ex.getMessage();
-                return false;
-               
-         } //System.out.println(flag);
-        return flag;  
+                System.out.println("Failed to find User Locating...");
+       } //System.out.println(flag);
+        System.out.println("No User Found");  
+        return null;
     }
     
     public void addToFirebase(User user){
@@ -269,8 +261,9 @@ public class FirebaseInitialize {
     public static void main(String[] args) {
             FirebaseInitialize.initializeFB();
             FirebaseInitialize fb = FirebaseInitialize.getInstance();
-            User user = new User("Jeff", "Cuadra", "jeff2@gmail.com", "2what4u");
-            fb.addToFirebase(user);
+            //User user = new User("Jeff", "Cuadra", "jeff2@gmail.com", "2what4u");
+            //fb.addToFirebase(user);
+            System.out.println(fb.readFromFirebase("jeo@gmail.com", "123abc").getfName());
              
     }
 }

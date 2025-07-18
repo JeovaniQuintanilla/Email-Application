@@ -53,26 +53,25 @@ public class SignInController implements Initializable{
     
     @FXML
     void SignIn(ActionEvent event) throws IOException {
-        if(verifyCreds()){
-            String email = emailField.getText();
-            String pass = pwordField.getText();
-            currentUser.setEmailAddr(email);
-            currentUser.setPassword(pass);
-            System.out.println("Current user " + currentUser.getEmailAddr());
+        if(verifyCreds()!= null){
+            currentUser.setfName(verifyCreds().getfName());
+            currentUser.setlName(verifyCreds().getlName());
+            currentUser.setEmailAddr(emailField.getText());
+            currentUser.setPassword(pwordField.getText());
+            System.out.println("Current user: " + currentUser.getEmailAddr());
             App.setRoot("Index");
-           
+    
         }else{
             System.out.println("Credentials are invalid");
         }
     }
     
-    private Boolean verifyCreds() {
+    private User verifyCreds() {
         String email = emailField.getText();
         String password = pwordField.getText();
         if (emailField.getText().isBlank() || pwordField.getText().isBlank()){
-            return false;
-        }
-            
+            System.out.println("Invalid credentials"); //change this to an Alert PopUp
+        }  
         return FirebaseInitialize.getInstance().readFromFirebase(email, password);        
     }
 }

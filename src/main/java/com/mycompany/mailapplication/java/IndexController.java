@@ -138,16 +138,8 @@ public class IndexController implements Initializable {
 
     }
     
-    @FXML
-    void displayDrafts(MouseEvent event) {
-        int count = listView.getItems().size();
-        if (count != 0){
-            listView.getItems().clear();
-        }
-        displayDrafts();
-        count = listView.getItems().size();
-        System.out.println("Current Listview: " + count);
-    }
+    
+    
 
     @FXML
     void displayInbox(MouseEvent event) {

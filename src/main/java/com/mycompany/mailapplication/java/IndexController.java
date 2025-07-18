@@ -6,6 +6,8 @@ package com.mycompany.mailapplication.java;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
@@ -14,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.print.Collation;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -91,37 +94,18 @@ public class IndexController implements Initializable {
     //edit - dont think i need to check for listview count
     @FXML
     void displayEmails(MouseEvent event) {
-        int count = listView.getItems().size();
-        
+        int count = listView.getItems().size(); 
         if (drafts.isPressed()){
-            if (count != 0){
-                listView.getItems().clear();
-                displayDrafts();
-            }else{
-                displayDrafts();
-            }
+            displayDrafts();
             currentBox = drafts.getId();
             System.out.println("Drafts Box Test, Currnet Box:" + currentBox);
         }
         if(inbox.isPressed()){
-            if (count != 0){
-                listView.getItems().clear();
-                displayInbox();
-            }else{
-                displayInbox();
-            }
-            
             currentBox = inbox.getId();
             System.out.println("Inbox Box Test, Currnet Box:" + currentBox);
         }
         if(sent.isPressed()){
-            
-            if (count != 0){
-                listView.getItems().clear();
-                displaySent();
-            }else{
-                displaySent();
-            }
+            displaySent();
             currentBox = sent.getId();
             System.out.println("Sent Box Test, Currnet Box: " + currentBox);   
         }
@@ -149,7 +133,8 @@ public class IndexController implements Initializable {
         if (emails != null && !emails.isEmpty()) {
             //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
             for (Email email : emails) {
-                listView.getItems().addAll(email);
+                //listView.getItems().addAll(email);
+                listView.getItems().setAll(email);
             }
         } else {
             System.out.println("No emails found.");
@@ -160,15 +145,17 @@ public class IndexController implements Initializable {
      * Displays the contents of Sent
     */
     private void displaySent(){
-        List<Email> emails = retrieveSent();
-        if (emails != null && !emails.isEmpty()) {
-            //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
+         List<Email> emails = retrieveSent();
+         
+         if (emails != null && !emails.isEmpty()) {
+           //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
             for (Email email : emails) {
-                listView.getItems().addAll(email);
-                //"From: " + email.getSender() + "\n" +email.getMessage()
-            }
-        } else {
-            System.out.println("No emails found.");
+             //listView.getItems().addAll(email);
+              listView.getItems().setAll(email);
+              //"From: " + email.getSender() + "\n" +email.getMessage()           }
+            } 
+          } else{
+          System.out.println("No emails found.");
         }
     }
     
@@ -180,7 +167,8 @@ public class IndexController implements Initializable {
         if (emails != null && !emails.isEmpty()) {
             //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
             for (Email email : emails) {
-                listView.getItems().addAll(email);
+                //listView.getItems().addAll(email);
+                listView.getItems().setAll(email);
             }
         } else {
             System.out.println("No emails found.");

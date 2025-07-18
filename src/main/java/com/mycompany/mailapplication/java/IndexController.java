@@ -156,15 +156,7 @@ public class IndexController implements Initializable {
     */
     private void displayDrafts(){
         List<Email> emails = retrieveDrafts();
-        if (emails != null && !emails.isEmpty()) {
-            //ObservableList<Email> observableEmails = FXCollections.observableArrayList(emails);
-            for (Email email : emails) {
-                //listView.getItems().addAll(email);
-                listView.getItems().setAll(email);
-            }
-        } else {
-            System.out.println("No emails found.");
-        }
+        listView.getItems().setAll(emails);
     }
    
     /**

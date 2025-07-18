@@ -61,7 +61,6 @@ public class IndexController implements Initializable {
     
     
     /**TO-DO: - this is a list of commits I plan to implement into this section
-     * 1 - display methods simplified into one depending on a variable (holding the current window)
      * 2 - figure out the order the emails load/send in - want from most recent to less recent
      * 3 - implement settings page
      * 4 - implement search bar
@@ -89,20 +88,17 @@ public class IndexController implements Initializable {
         popUpStage.setScene(s);
         popUpStage.show();
     }
-    
+    //edit - dont think i need to check for listview count
     @FXML
     void displayEmails(MouseEvent event) {
         int count = listView.getItems().size();
         
         if (drafts.isPressed()){
-        
             if (count != 0){
                 listView.getItems().clear();
                 displayDrafts();
             }else{
                 displayDrafts();
-                //count = listView.getItems().size();
-                //System.out.println("Current Listview: " + count);
             }
             currentBox = drafts.getId();
             System.out.println("Drafts Box Test, Currnet Box:" + currentBox);
@@ -113,13 +109,10 @@ public class IndexController implements Initializable {
                 displayInbox();
             }else{
                 displayInbox();
-                //count = listView.getItems().size();
-                //System.out.println("Current Listview: " + count);
             }
             
             currentBox = inbox.getId();
             System.out.println("Inbox Box Test, Currnet Box:" + currentBox);
-            
         }
         if(sent.isPressed()){
             
@@ -128,14 +121,10 @@ public class IndexController implements Initializable {
                 displaySent();
             }else{
                 displaySent();
-                //count = listView.getItems().size();
-                //System.out.println("Current Listview: " + count);
             }
             currentBox = sent.getId();
-            System.out.println("Sent Box Test, Currnet Box: " + currentBox);
-            
+            System.out.println("Sent Box Test, Currnet Box: " + currentBox);   
         }
-
     }
     
 
@@ -149,6 +138,8 @@ public class IndexController implements Initializable {
         //Alert("You are about to log out, are you usre??");
         SignUpController.toSignInScreen();
     }
+    
+    //check whether if i uses setAll instead of addAll if that is more efficient
     
     /**
      * Displays the contents of inbox

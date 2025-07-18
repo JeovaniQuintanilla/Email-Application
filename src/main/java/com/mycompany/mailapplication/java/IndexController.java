@@ -101,6 +101,7 @@ public class IndexController implements Initializable {
             System.out.println("Drafts Box Test, Currnet Box:" + currentBox);
         }
         if(inbox.isPressed()){
+            displayInbox();
             currentBox = inbox.getId();
             System.out.println("Inbox Box Test, Currnet Box:" + currentBox);
         }

@@ -68,7 +68,6 @@ public class IndexController implements Initializable {
      * 4 - implement search bar
      * 5 - add images
      * 6 - edit with css
-     * 
     */
     
     @Override

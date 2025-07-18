@@ -76,9 +76,6 @@ public class FirebaseInitialize {
                 userfound.setfName(document.getString("fName"));
                 userfound.setlName(document.getString("lName"));
                 return userfound;
-                //System.out.println("Found-> "+userfound.getfName());
-                //flag = true;
-                //break;
             }
         }
        }catch (ExecutionException | InterruptedException ex) {

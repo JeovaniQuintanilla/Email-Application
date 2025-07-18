@@ -4,6 +4,7 @@
  */
 package com.mycompany.mailapplication.java;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -69,7 +70,10 @@ public class SettingsController implements Initializable {
     }
 
     @FXML
-    private void exitSettings(MouseEvent event) {
+    private void exitSettings(MouseEvent event) throws IOException {
+        App.setRoot("Index");
+        App.getStage().sizeToScene();
     }
+    
     
 }

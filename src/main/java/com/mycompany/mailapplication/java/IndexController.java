@@ -64,7 +64,6 @@ public class IndexController implements Initializable {
     
     
     /**TO-DO: - this is a list of commits I plan to implement into this section
-     * 3 - implement settings page
      * 4 - implement search bar
      * 5 - add images
      * 6 - edit with css

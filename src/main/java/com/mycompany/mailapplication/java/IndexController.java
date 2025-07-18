@@ -140,18 +140,6 @@ public class IndexController implements Initializable {
     
 
     @FXML
-    void displaySent(MouseEvent event) {
-        int count = listView.getItems().size();
-        if (count != 0){
-            listView.getItems().clear();
-        }
-        displaySent();
-        count = listView.getItems().size();
-        System.out.println("Current Listview: " + count);
-
-    }
-
-    @FXML
     void goToSettingPage(MouseEvent event) {
         //App.setRoot("Settings");
     }

@@ -93,16 +93,44 @@ public class IndexController implements Initializable {
     @FXML
     void displayEmails(MouseEvent event) {
         int count = listView.getItems().size();
+        
         if (drafts.isPressed()){
+        
+            if (count != 0){
+                listView.getItems().clear();
+                displayDrafts();
+            }else{
+                displayDrafts();
+                //count = listView.getItems().size();
+                //System.out.println("Current Listview: " + count);
+            }
             currentBox = drafts.getId();
             System.out.println("Drafts Box Test, Currnet Box:" + currentBox);
         }
         if(inbox.isPressed()){
+            if (count != 0){
+                listView.getItems().clear();
+                displayInbox();
+            }else{
+                displayInbox();
+                //count = listView.getItems().size();
+                //System.out.println("Current Listview: " + count);
+            }
+            
             currentBox = inbox.getId();
             System.out.println("Inbox Box Test, Currnet Box:" + currentBox);
             
         }
         if(sent.isPressed()){
+            
+            if (count != 0){
+                listView.getItems().clear();
+                displaySent();
+            }else{
+                displaySent();
+                //count = listView.getItems().size();
+                //System.out.println("Current Listview: " + count);
+            }
             currentBox = sent.getId();
             System.out.println("Sent Box Test, Currnet Box: " + currentBox);
             

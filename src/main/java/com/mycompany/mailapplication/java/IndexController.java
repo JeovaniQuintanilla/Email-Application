@@ -57,6 +57,7 @@ public class IndexController implements Initializable {
     private Label sent;
     
     public static Stage popUpStage;
+    public static String currentBox;
     
     
     /**TO-DO: - this is a list of commits I plan to implement into this section
@@ -72,6 +73,7 @@ public class IndexController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         displayInbox();
+        
     }
     
     /**
@@ -87,7 +89,27 @@ public class IndexController implements Initializable {
         popUpStage.setScene(s);
         popUpStage.show();
     }
-   
+    
+    @FXML
+    void displayEmails(MouseEvent event) {
+        int count = listView.getItems().size();
+        if (drafts.isPressed()){
+            currentBox = drafts.getId();
+            System.out.println("Drafts Box Test, Currnet Box:" + currentBox);
+        }
+        if(inbox.isPressed()){
+            currentBox = inbox.getId();
+            System.out.println("Inbox Box Test, Currnet Box:" + currentBox);
+            
+        }
+        if(sent.isPressed()){
+            currentBox = sent.getId();
+            System.out.println("Sent Box Test, Currnet Box: " + currentBox);
+            
+        }
+
+    }
+    
     @FXML
     void displayDrafts(MouseEvent event) {
         int count = listView.getItems().size();

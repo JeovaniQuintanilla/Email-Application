@@ -21,7 +21,7 @@
       <ListView fx:id="listView" layoutX="222.0" layoutY="125.0" onMouseClicked="#viewEmail" prefHeight="448.0" prefWidth="563.0" />
       <VBox fx:id="mailNav" alignment="TOP_CENTER" layoutX="8.0" layoutY="177.0" prefHeight="147.0" prefWidth="170.0">
          <children>
-            <Label fx:id="inbox" alignment="CENTER" onMouseClicked="#displayInbox" prefHeight="32.0" prefWidth="109.0" text="Inbox" textFill="#eee7e7">
+            <Label fx:id="inbox" alignment="CENTER" onMouseClicked="#displayInbox" onMousePressed="#displayEmails" prefHeight="32.0" prefWidth="109.0" text="Inbox" textFill="#eee7e7">
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
@@ -29,7 +29,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <Label fx:id="sent" alignment="CENTER" onMouseClicked="#displaySent" prefHeight="32.0" prefWidth="109.0" text="Sent" textFill="#eee7e7">
+            <Label fx:id="sent" alignment="CENTER" onMouseClicked="#displaySent" onMousePressed="#displayEmails" prefHeight="32.0" prefWidth="109.0" text="Sent" textFill="#eee7e7">
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>
@@ -37,7 +37,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Label>
-            <Label fx:id="drafts" alignment="CENTER" onMouseClicked="#displayDrafts" prefHeight="32.0" prefWidth="109.0" text="Drafts" textFill="#eee7e7">
+            <Label fx:id="drafts" alignment="CENTER" onMouseClicked="#displayDrafts" onMousePressed="#displayEmails" prefHeight="32.0" prefWidth="109.0" text="Drafts" textFill="#eee7e7">
                <graphic>
                   <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
                </graphic>

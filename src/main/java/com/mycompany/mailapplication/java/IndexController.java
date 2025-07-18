@@ -64,7 +64,6 @@ public class IndexController implements Initializable {
     
     
     /**TO-DO: - this is a list of commits I plan to implement into this section
-     * 2 - figure out the order the emails load/send in - want from most recent to less recent
      * 3 - implement settings page
      * 4 - implement search bar
      * 5 - add images
@@ -74,8 +73,7 @@ public class IndexController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        displayInbox();
-        
+        displayInbox(); 
     }
     
     /**
@@ -91,10 +89,9 @@ public class IndexController implements Initializable {
         popUpStage.setScene(s);
         popUpStage.show();
     }
-    //edit - dont think i need to check for listview count
+    
     @FXML
     void displayEmails(MouseEvent event) {
-        int count = listView.getItems().size(); 
         if (drafts.isPressed()){
             displayDrafts();
             currentBox = drafts.getId();
@@ -123,8 +120,6 @@ public class IndexController implements Initializable {
         //Alert("You are about to log out, are you usre??");
         SignUpController.toSignInScreen();
     }
-    
-    //check whether if i uses setAll instead of addAll if that is more efficient
     
     /**
      * Displays the contents of inbox

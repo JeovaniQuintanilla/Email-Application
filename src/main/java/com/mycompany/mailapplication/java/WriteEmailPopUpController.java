@@ -44,8 +44,6 @@ public class WriteEmailPopUpController implements Initializable {
     @FXML
     private TextField receiverField;
 
-    @FXML
-    private Button replyBtn;
 
     @FXML
     private Button sendBtn;
@@ -138,7 +136,6 @@ public class WriteEmailPopUpController implements Initializable {
         }
     }
     
-    @FXML
     void reply(ActionEvent event) {
 
     }

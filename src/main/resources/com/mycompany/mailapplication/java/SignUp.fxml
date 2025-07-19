@@ -9,19 +9,19 @@
 
 <AnchorPane fx:id="SignUp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.SignUpController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#828283" height="577.0" layoutX="-5.0" layoutY="-4.0" stroke="TRANSPARENT" strokeType="INSIDE" width="387.0" />
-      <TextField fx:id="fnameField" layoutX="440.0" layoutY="167.0" prefHeight="32.0" prefWidth="149.0" promptText="First Name" />
-      <TextField fx:id="emailField" layoutX="442.0" layoutY="228.0" prefHeight="32.0" prefWidth="308.0" promptText="Email Address" />
-      <TextField fx:id="lnameField" layoutX="600.0" layoutY="167.0" prefHeight="32.0" prefWidth="149.0" promptText="Last Name" />
-      <TextField fx:id="pwordField" layoutX="442.0" layoutY="295.0" prefHeight="32.0" prefWidth="308.0" promptText="Password " />
-      <Button fx:id="signupBtn" layoutX="447.0" layoutY="423.0" mnemonicParsing="false" onAction="#CreateAccount" prefHeight="48.0" prefWidth="296.0" text="Create Account" />
-      <Label layoutX="523.0" layoutY="508.0" prefHeight="17.0" prefWidth="95.0" text="Return To LogIn: " />
-      <Label fx:id="signinText" layoutX="614.0" layoutY="508.0" onMouseClicked="#ReturnToSignIn" prefHeight="17.0" prefWidth="50.0" text="SignIn" textFill="#3c6aeb" underline="true" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1a1a1" height="576.0" layoutX="358.0" layoutY="-2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="48.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#949292" height="577.0" layoutX="-5.0" layoutY="-4.0" stroke="TRANSPARENT" strokeType="INSIDE" width="387.0" />
+      <TextField fx:id="fnameField" layoutX="433.0" layoutY="166.0" prefHeight="32.0" prefWidth="149.0" promptText="First Name" />
+      <TextField fx:id="emailField" layoutX="435.0" layoutY="227.0" prefHeight="32.0" prefWidth="308.0" promptText="Email Address" />
+      <TextField fx:id="lnameField" layoutX="593.0" layoutY="166.0" prefHeight="32.0" prefWidth="149.0" promptText="Last Name" />
+      <TextField fx:id="pwordField" layoutX="435.0" layoutY="294.0" prefHeight="32.0" prefWidth="308.0" promptText="Password " />
+      <Button fx:id="signupBtn" layoutX="440.0" layoutY="422.0" mnemonicParsing="false" onAction="#CreateAccount" prefHeight="48.0" prefWidth="296.0" text="Create Account" />
+      <Label layoutX="516.0" layoutY="507.0" prefHeight="17.0" prefWidth="95.0" text="Return To LogIn: " />
+      <Label fx:id="signinText" layoutX="607.0" layoutY="507.0" onMouseClicked="#ReturnToSignIn" prefHeight="17.0" prefWidth="50.0" text="SignIn" textFill="#3c6aeb" underline="true" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1a1a1" height="577.0" layoutX="350.0" layoutY="-4.0" stroke="TRANSPARENT" strokeType="INSIDE" width="48.0" />
       <Label layoutX="427.0" layoutY="23.0" text="Create Your Account" />
       <ImageView fitHeight="135.0" fitWidth="161.0" layoutX="108.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true" />
-      <TextField fx:id="pwordField1" layoutX="443.0" layoutY="355.0" prefHeight="32.0" prefWidth="308.0" promptText="Password " />
+      <TextField fx:id="pwordField1" layoutX="436.0" layoutY="354.0" prefHeight="32.0" prefWidth="308.0" promptText="Password " />
       <Label layoutX="125.0" layoutY="337.0" text="Welcome to MailGarage" />
-      <ImageView fitHeight="88.0" fitWidth="117.0" layoutX="537.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fitHeight="88.0" fitWidth="117.0" layoutX="530.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

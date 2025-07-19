@@ -23,8 +23,6 @@ import javafx.scene.layout.AnchorPane;
  */
 public class SettingsController implements Initializable {
     
-    @FXML
-    private ImageView appIIMG;
 
     @FXML
     private TextField cpwordField;
@@ -38,13 +36,15 @@ public class SettingsController implements Initializable {
     @FXML
     private TextField lnField;
 
-    @FXML
-    private ImageView profilePic;
 
     @FXML
     private TextField pwordField;
     @FXML
     private AnchorPane setting;
+    @FXML
+    private ImageView profilePic2;
+    @FXML
+    private ImageView profilePic1;
 
     /**
      * Initializes the controller class.
@@ -58,7 +58,6 @@ public class SettingsController implements Initializable {
         pwordField.setText(SignInController.currentUser.getPassword());
     }
 
-    @FXML
     void editSettings(ActionEvent event) {
 
     }
@@ -77,6 +76,14 @@ public class SettingsController implements Initializable {
     private void exitSettings(MouseEvent event) throws IOException {
         App.setRoot("Index");
         App.getStage().sizeToScene();
+    }
+
+    @FXML
+    private void saveSettings(MouseEvent event) {
+    }
+
+    @FXML
+    private void editSettings(MouseEvent event) {
     }
     
     

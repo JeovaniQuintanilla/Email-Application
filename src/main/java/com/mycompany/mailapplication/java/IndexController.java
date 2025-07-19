@@ -53,8 +53,6 @@ public class IndexController implements Initializable {
     @FXML
     private ListView<Email> listView;
 
-    @FXML
-    private VBox mailNav;
 
     @FXML
     private Label sent;
@@ -201,5 +199,9 @@ public class IndexController implements Initializable {
         //System.out.println(sender + " ,\n " + receiver + ",\n " + subj + ",\n " + message);
         popUpStage.setScene(s);
         popUpStage.show();
+    }
+
+    @FXML
+    private void deleteEmail(ActionEvent event) {
     }
 }

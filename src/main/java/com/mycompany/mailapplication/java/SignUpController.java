@@ -35,6 +35,8 @@ public class SignUpController {
 
     @FXML
     private Button signupBtn;
+    @FXML
+    private TextField pwordField1;
     
      /**TO-DO: - this is a list of commits I plan to implement into this section
      * 1 - edit with css

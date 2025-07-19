@@ -6,12 +6,13 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane id="AnchorPane" prefHeight="417.0" prefWidth="598.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.ViewEmailPopUpController">
    <children>
       <Label layoutX="26.0" layoutY="48.0" prefHeight="17.0" prefWidth="50.0" text="From:" />
-      <Label layoutX="292.0" layoutY="48.0" text="To:" />
+      <Label layoutX="251.0" layoutY="48.0" text="To:" />
       <Label layoutX="26.0" layoutY="94.0" prefHeight="17.0" prefWidth="50.0" text="Subject" />
       <Label layoutX="31.0" layoutY="142.0" text="Message:" />
       <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="600.0">
@@ -33,11 +34,12 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TextArea fx:id="msgLabel" layoutX="29.0" layoutY="169.0" prefHeight="184.0" prefWidth="542.0" />
-      <Button layoutX="479.0" layoutY="365.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="76.0" text="Reply" />
-      <Button layoutX="374.0" layoutY="365.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="76.0" text="Forward" />
+      <TextArea fx:id="msgLabel" layoutX="29.0" layoutY="169.0" prefHeight="184.0" prefWidth="542.0" promptText="Message is written here..." />
+      <Button layoutX="495.0" layoutY="365.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="76.0" text="Reply" />
+      <Button layoutX="390.0" layoutY="365.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="76.0" text="Forward" />
       <Label fx:id="sndrLabel" layoutX="62.0" layoutY="48.0" prefHeight="17.0" prefWidth="175.0" text="Label" />
-      <Label fx:id="subjLabel" layoutX="76.0" layoutY="94.0" prefHeight="17.0" prefWidth="175.0" text="Label" />
-      <Label fx:id="recLabel" layoutX="325.0" layoutY="48.0" prefHeight="17.0" prefWidth="175.0" text="Label" />
+      <Label fx:id="subjLabel" layoutX="76.0" layoutY="94.0" prefHeight="17.0" prefWidth="386.0" text="Label" />
+      <Label fx:id="recLabel" layoutX="284.0" layoutY="48.0" prefHeight="17.0" prefWidth="175.0" text="Label" />
+      <ImageView fitHeight="110.0" fitWidth="118.0" layoutX="476.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" />
    </children>
 </AnchorPane>

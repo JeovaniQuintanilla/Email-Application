@@ -9,13 +9,16 @@
 
 <AnchorPane fx:id="SignIn" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.SignInController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8d8a8a" height="579.0" layoutX="-5.0" layoutY="-4.0" stroke="BLACK" strokeType="INSIDE" width="387.0" />
-      <ImageView fitHeight="135.0" fitWidth="161.0" layoutX="96.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="SignInBtn" layoutX="524.0" layoutY="301.0" mnemonicParsing="false" onAction="#SignIn" prefHeight="48.0" prefWidth="117.0" text="SignIn" />
-      <TextField fx:id="pwordField" layoutX="489.0" layoutY="240.0" prefHeight="32.0" prefWidth="187.0" promptText="Password:" />
-      <TextField fx:id="emailField" layoutX="489.0" layoutY="176.0" prefHeight="31.0" prefWidth="187.0" promptText="Email:" />
-      <Label layoutX="500.0" layoutY="368.0" prefHeight="17.0" prefWidth="101.0" text="Need An Account?" />
-      <Label fx:id="signupText" layoutX="603.0" layoutY="368.0" onMouseClicked="#GoToSignUp" prefHeight="17.0" prefWidth="62.0" text="Create One" textFill="#1c56d3" />
-      <Label layoutX="519.0" layoutY="137.0" text="Welcome to MailGarage" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#949292" height="577.0" layoutX="-5.0" layoutY="-4.0" stroke="TRANSPARENT" strokeType="INSIDE" width="387.0" />
+      <ImageView fitHeight="135.0" fitWidth="161.0" layoutX="96.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true" />
+      <Button fx:id="SignInBtn" layoutX="442.0" layoutY="377.0" mnemonicParsing="false" onAction="#SignIn" prefHeight="48.0" prefWidth="296.0" text="SignIn" />
+      <TextField fx:id="pwordField" layoutX="442.0" layoutY="301.0" prefHeight="32.0" prefWidth="296.0" promptText="Password:" />
+      <TextField fx:id="emailField" layoutX="442.0" layoutY="237.0" prefHeight="31.0" prefWidth="296.0" promptText="Email:" />
+      <Label layoutX="535.0" layoutY="488.0" prefHeight="17.0" prefWidth="62.0" text="New User?" />
+      <Label fx:id="signupText" layoutX="597.0" layoutY="488.0" onMouseClicked="#GoToSignUp" prefHeight="17.0" prefWidth="48.0" text="Signup" textFill="#1c56d3" />
+      <Label layoutX="521.0" layoutY="206.0" text="Sign in to view you emails" />
+      <Label layoutX="113.0" layoutY="344.0" text="Welcome to MailGarage" />
+      <ImageView fitHeight="59.0" fitWidth="62.0" layoutX="411.0" layoutY="23.0" pickOnBounds="true" preserveRatio="true" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1a1a1" height="577.0" layoutX="350.0" layoutY="-4.0" stroke="TRANSPARENT" strokeType="INSIDE" width="48.0" />
    </children>
 </AnchorPane>

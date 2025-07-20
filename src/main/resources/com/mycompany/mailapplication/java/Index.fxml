@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane id="AnchorPane" prefHeight="573.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.IndexController">
+<AnchorPane stylesheets="styles.css" id="AnchorPane" prefHeight="573.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.IndexController">
    <children>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#888e94" height="573.0" layoutX="-3.0" stroke="TRANSPARENT" strokeType="INSIDE" width="225.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b3b6b9" height="67.0" layoutX="222.0" layoutY="158.0" stroke="TRANSPARENT" strokeType="INSIDE" width="563.0" />

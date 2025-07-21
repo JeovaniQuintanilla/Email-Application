@@ -9,14 +9,17 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.Blend?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane stylesheets="styles.css" id="AnchorPane" prefHeight="573.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.IndexController">
+<AnchorPane id="AnchorPane" prefHeight="573.0" prefWidth="774.0" stylesheets="styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.IndexController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#888e94" height="573.0" layoutX="-3.0" stroke="TRANSPARENT" strokeType="INSIDE" width="225.0" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#b3b6b9" height="67.0" layoutX="222.0" layoutY="158.0" stroke="TRANSPARENT" strokeType="INSIDE" width="563.0" />
+      <Rectangle id="idx_rect" arcHeight="5.0" arcWidth="5.0" fill="#888e94" height="577.0" layoutY="-2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="225.0" />
+      <Rectangle id="idx_rect2" arcHeight="5.0" arcWidth="5.0" fill="#b3b6b9" height="67.0" layoutX="229.0" layoutY="158.0" stroke="TRANSPARENT" strokeType="INSIDE" width="556.0" />
+      <ListView fx:id="listView" layoutX="229.0" layoutY="225.0" onMouseClicked="#viewEmail" prefHeight="348.0" prefWidth="556.0" />
+      <Rectangle id="signIn_rect2" arcHeight="5.0" arcWidth="5.0" fill="#dce3eb" height="577.0" layoutX="219.0" layoutY="-2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="12.0" />
       <MenuBar prefHeight="32.0" prefWidth="786.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
@@ -36,9 +39,8 @@
           </Menu>
         </menus>
       </MenuBar>
-      <ListView fx:id="listView" layoutX="222.0" layoutY="225.0" onMouseClicked="#viewEmail" prefHeight="348.0" prefWidth="563.0" />
-      <TextField layoutX="339.0" layoutY="176.0" prefHeight="32.0" prefWidth="326.0" promptText="Search Emails" />
-      <Button fx:id="composeBtn" alignment="CENTER" layoutX="56.0" layoutY="175.0" mnemonicParsing="false" onAction="#createEmail" prefHeight="40.0" prefWidth="109.0" text="+ Compose">
+      <TextField layoutX="339.0" layoutY="176.0" prefHeight="32.0" prefWidth="326.0" promptText="Search Emails" stylesheets="@../../../../styles.css" />
+      <Button fx:id="composeBtn" alignment="CENTER" layoutX="56.0" layoutY="175.0" mnemonicParsing="false" onAction="#createEmail" prefHeight="40.0" prefWidth="109.0" stylesheets="@../../../../styles.css" text="+ Compose">
          <effect>
             <Blend />
          </effect>
@@ -46,7 +48,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Label fx:id="inbox" alignment="CENTER" layoutX="56.0" layoutY="231.0" onMousePressed="#displayEmails" prefHeight="32.0" prefWidth="109.0" text="Inbox" textFill="#eee7e7">
+      <Label id="nav_btns" fx:id="inbox" alignment="CENTER" layoutX="56.0" layoutY="231.0" onMousePressed="#displayEmails" prefHeight="32.0" prefWidth="109.0" stylesheets="@../../../../styles.css" text="Inbox" textFill="#eee7e7">
          <graphic>
             <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
@@ -54,7 +56,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Label>
-      <Label fx:id="sent" alignment="CENTER" layoutX="56.0" layoutY="275.0" onMousePressed="#displayEmails" prefHeight="32.0" prefWidth="109.0" text="Sent" textFill="#eee7e7">
+      <Label id="nav_btns" fx:id="sent" alignment="CENTER" layoutX="56.0" layoutY="275.0" onMousePressed="#displayEmails" prefHeight="32.0" prefWidth="109.0" stylesheets="@../../../../styles.css" text="Sent" textFill="#eee7e7">
          <graphic>
             <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
@@ -62,7 +64,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Label>
-      <Label fx:id="drafts" alignment="CENTER" layoutX="56.0" layoutY="317.0" onMousePressed="#displayEmails" prefHeight="32.0" prefWidth="109.0" text="Drafts" textFill="#eee7e7">
+      <Label id="nav_btns" fx:id="drafts" alignment="CENTER" layoutX="56.0" layoutY="317.0" onMousePressed="#displayEmails" prefHeight="32.0" prefWidth="109.0" stylesheets="@../../../../styles.css" text="Drafts" textFill="#eee7e7">
          <graphic>
             <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
@@ -70,8 +72,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Label>
-      <ImageView fitHeight="98.0" fitWidth="153.0" layoutX="34.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" />
-      <Label alignment="CENTER" layoutX="41.0" layoutY="479.0" onMouseClicked="#goToSettingPage" prefHeight="32.0" prefWidth="138.0" text="Settings" textFill="#eee7e7">
+      <Label id="nav_btns" alignment="CENTER" layoutX="41.0" layoutY="479.0" onMouseClicked="#goToSettingPage" prefHeight="32.0" prefWidth="138.0" stylesheets="@../../../../styles.css" text="Settings" textFill="#eee7e7">
          <graphic>
             <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
@@ -79,7 +80,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Label>
-      <Label alignment="CENTER" layoutX="23.0" layoutY="517.0" onMouseClicked="#logOut" prefHeight="32.0" prefWidth="175.0" style="-fx-border-color: balck;" text="LogOut" textFill="#eee7e7">
+      <Label id="nav_btns" alignment="CENTER" layoutX="23.0" layoutY="517.0" onMouseClicked="#logOut" prefHeight="32.0" prefWidth="175.0" style="-fx-border-color: balck;" stylesheets="@../../../../styles.css" text="LogOut" textFill="#eee7e7">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -87,11 +88,16 @@
             <ImageView fitHeight="32.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true" />
          </graphic>
       </Label>
-      <Label layoutX="230.0" layoutY="177.0" prefHeight="32.0" prefWidth="50.0" text="Emails:" />
-      <Label layoutX="232.0" layoutY="52.0" prefHeight="17.0" prefWidth="62.0" text="Welcome, " />
-      <Label layoutX="294.0" layoutY="52.0" prefHeight="17.0" prefWidth="153.0" text="account owner " />
+      <Label id="counter_label" layoutX="238.0" layoutY="176.0" prefHeight="32.0" prefWidth="39.0" stylesheets="@../../../../styles.css" text="Emails:" />
+      <Label id="greeting_label" layoutX="238.0" layoutY="52.0" prefHeight="17.0" prefWidth="62.0" text="Welcome, " />
+      <Label id="greeting_label" layoutX="300.0" layoutY="52.0" prefHeight="17.0" prefWidth="153.0" text="account owner " />
       <ImageView fitHeight="77.0" fitWidth="80.0" layoutX="692.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true" />
-      <Label layoutX="280.0" layoutY="177.0" prefHeight="32.0" prefWidth="62.0" text="0" />
-      <Button disable="true" layoutX="692.0" layoutY="176.0" mnemonicParsing="false" onAction="#deleteEmail" prefHeight="32.0" prefWidth="62.0" text="Delete" />
+      <Label id="counter_label" layoutX="277.0" layoutY="176.0" prefHeight="32.0" prefWidth="50.0" stylesheets="@../../../../styles.css" text="0" />
+      <Button disable="true" layoutX="692.0" layoutY="176.0" mnemonicParsing="false" onAction="#deleteEmail" prefHeight="32.0" prefWidth="62.0" stylesheets="@../../../../styles.css" text="Delete" />
+      <ImageView fx:id="profilePic1" fitHeight="98.0" fitWidth="142.0" layoutX="35.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../JQMAIL_logo2.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -79,15 +79,23 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 
 /*CSS for Settings Screen*/
 /* Rectangle */
+
+
+
+
+/*CSS for Settings Screen*/
+/* Rectangle */
 .Settings#setting_rect{ 
     -fx-fill: #144772;
 }
 .Settings#setting_rect2{ 
     -fx-fill: #DCE3EB;
 }
+/* Labels */
 .Settings > Label{ 
     -fx-font-family: "Arial";
 }
+/* Big Labels */
 #setting_heading{ 
     -fx-font-family: "Arial";
     -fx-font-align-self: center;
@@ -95,6 +103,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-font-weight: bold;
     -fx-translate-x: 0px;
 }
+/* sub-Labels */
 #setting_subheading{ 
     -fx-font-family: "Arial";
     -fx-font-weight: bold;

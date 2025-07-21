@@ -7,16 +7,18 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.shape.Rectangle?>
 
-<AnchorPane id="AnchorPane" fx:id="setting" prefHeight="573.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.SettingsController">
+<AnchorPane id="Settings" fx:id="setting" prefHeight="573.0" prefWidth="774.0" stylesheets="@../../../../styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.SettingsController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#888e94" height="542.0" layoutX="-9.0" layoutY="31.0" stroke="TRANSPARENT" strokeType="INSIDE" width="225.0" />
-      <Label layoutX="228.0" layoutY="51.0" prefHeight="17.0" prefWidth="164.0" text="Profile Settings " />
-      <TextField fx:id="fnField" editable="false" layoutX="261.0" layoutY="191.0" prefHeight="25.0" prefWidth="390.0" />
-      <Label layoutX="263.0" layoutY="327.0" prefHeight="17.0" prefWidth="39.0" text="Email" />
+      <Rectangle id="setting_rect" arcHeight="5.0" arcWidth="5.0" height="577.0" layoutY="-2.0" stroke="TRANSPARENT" strokeType="INSIDE" styleClass="Settings" width="225.0" />
+      <Rectangle id="signIn_rect2" arcHeight="5.0" arcWidth="5.0" fill="#dce3eb" height="577.0" layoutX="219.0" layoutY="-2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="12.0" />
+      <Label id="setting_heading" layoutX="276.0" layoutY="51.0" prefHeight="47.0" prefWidth="306.0" stylesheets="@../../../../styles.css" text="Profile Settings " />
+      <TextField fx:id="fnField" editable="false" layoutX="309.0" layoutY="191.0" prefHeight="25.0" prefWidth="390.0" stylesheets="@../../../../styles.css" />
+      <Label layoutX="311.0" layoutY="335.0" prefHeight="17.0" prefWidth="39.0" text="Email" />
       <MenuBar prefHeight="31.0" prefWidth="774.0">
         <menus>
           <Menu mnemonicParsing="false" text="File">
@@ -36,33 +38,39 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TextField fx:id="emailField" editable="false" layoutX="264.0" layoutY="345.0" prefHeight="25.0" prefWidth="390.0" />
-      <Label layoutX="261.0" layoutY="174.0" prefHeight="17.0" prefWidth="81.0" text="First Name:" />
-      <TextField fx:id="pwordField" editable="false" layoutX="264.0" layoutY="407.0" prefHeight="25.0" prefWidth="390.0" />
-      <Label layoutX="264.0" layoutY="389.0" prefHeight="17.0" prefWidth="68.0" text="Password:" />
-      <Button layoutX="409.0" layoutY="519.0" mnemonicParsing="false" onAction="#saveSettings" onMouseClicked="#saveSettings" prefHeight="39.0" prefWidth="100.0" text="Save Changes" visible="false" />
-      <ImageView fx:id="profilePic2" fitHeight="76.0" fitWidth="81.0" layoutX="663.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="emailField" editable="false" layoutX="312.0" layoutY="353.0" prefHeight="25.0" prefWidth="390.0" stylesheets="@../../../../styles.css" />
+      <Label layoutX="309.0" layoutY="174.0" prefHeight="17.0" prefWidth="81.0" text="First Name:" />
+      <TextField fx:id="pwordField" editable="false" layoutX="312.0" layoutY="415.0" prefHeight="25.0" prefWidth="390.0" stylesheets="@../../../../styles.css" />
+      <Label layoutX="312.0" layoutY="397.0" prefHeight="17.0" prefWidth="68.0" text="Password:" />
+      <Button layoutX="409.0" layoutY="519.0" mnemonicParsing="false" onAction="#saveSettings" onMouseClicked="#saveSettings" prefHeight="39.0" prefWidth="100.0" stylesheets="@../../../../styles.css" text="Save Changes" visible="false" />
+      <ImageView fx:id="profilePic2" fitHeight="76.0" fitWidth="81.0" layoutX="663.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../DefaultPic.png" />
+         </image></ImageView>
       <TextField fx:id="cpwordField" disable="true" layoutX="261.0" layoutY="467.0" prefHeight="25.0" prefWidth="390.0" visible="false" />
       <Label disable="true" layoutX="264.0" layoutY="450.0" prefHeight="17.0" prefWidth="100.0" text="Confirm Pasword" visible="false" />
-      <ImageView fx:id="profilePic1" fitHeight="117.0" fitWidth="137.0" layoutX="35.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" />
-      <TextField fx:id="lnField" editable="false" layoutX="261.0" layoutY="251.0" prefHeight="25.0" prefWidth="390.0" />
-      <Label alignment="CENTER" layoutX="16.0" layoutY="522.0" onMouseClicked="#logOut" prefHeight="32.0" prefWidth="175.0" style="-fx-border-color: balck;" text="LogOut" textFill="#eee7e7">
+      <ImageView fx:id="profilePic1" fitHeight="98.0" fitWidth="142.0" layoutX="35.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../JQMAIL_logo2.png" />
+         </image></ImageView>
+      <TextField fx:id="lnField" editable="false" layoutX="309.0" layoutY="251.0" prefHeight="25.0" prefWidth="390.0" stylesheets="@../../../../styles.css" />
+      <Label id="nav_btns" alignment="CENTER" layoutX="16.0" layoutY="522.0" onMouseClicked="#logOut" prefHeight="32.0" prefWidth="175.0" style="-fx-border-color: balck;" stylesheets="@../../../../styles.css" text="LogOut" textFill="#eee7e7">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Label>
-      <Label alignment="CENTER" layoutX="16.0" layoutY="490.0" onMouseClicked="#exitSettings" prefHeight="32.0" prefWidth="175.0" style="-fx-border-color: balck;" text="Inbox" textFill="#eee7e7">
+      <Label id="nav_btns" alignment="CENTER" layoutX="16.0" layoutY="481.0" onMouseClicked="#exitSettings" prefHeight="32.0" prefWidth="175.0" style="-fx-border-color: balck;" stylesheets="@../../../../styles.css" text="Inbox" textFill="#eee7e7">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Label>
-      <Label alignment="CENTER" layoutX="16.0" layoutY="188.0" onMouseClicked="#editSettings" prefHeight="32.0" prefWidth="175.0" style="-fx-border-color: balck;" text="Edit Profile" textFill="#eee7e7">
+      <Label id="nav_btns" alignment="CENTER" layoutX="16.0" layoutY="188.0" onMouseClicked="#editSettings" prefHeight="32.0" prefWidth="175.0" style="-fx-border-color: balck;" stylesheets="@../../../../styles.css" text="Edit Profile" textFill="#eee7e7">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Label>
-      <Label layoutX="228.0" layoutY="135.0" prefHeight="17.0" prefWidth="164.0" text="Profile Details" />
-      <Label layoutX="262.0" layoutY="234.0" prefHeight="17.0" prefWidth="81.0" text="Last Name:" />
-      <Label layoutX="228.0" layoutY="294.0" prefHeight="17.0" prefWidth="92.0" text="Security Details" />
+      <Label id="setting_subheading" layoutX="276.0" layoutY="135.0" prefHeight="17.0" prefWidth="164.0" stylesheets="@../../../../styles.css" text="Profile Details" />
+      <Label layoutX="310.0" layoutY="234.0" prefHeight="17.0" prefWidth="81.0" text="Last Name:" />
+      <Label id="setting_subheading" layoutX="276.0" layoutY="302.0" prefHeight="17.0" prefWidth="92.0" stylesheets="@../../../../styles.css" text="Security Details" />
    </children>
 </AnchorPane>

@@ -35,13 +35,13 @@
          <image>
             <Image url="@../../../../JQMAIL_logo2.png" />
          </image></ImageView>
-      <Button fx:id="SignInBtn" layoutX="431.0" layoutY="377.0" mnemonicParsing="false" onAction="#SignIn" prefHeight="48.0" prefWidth="296.0" text="SignIn" />
-      <TextField fx:id="pwordField" layoutX="431.0" layoutY="301.0" prefHeight="32.0" prefWidth="296.0" promptText="Password:" />
-      <TextField fx:id="emailField" layoutX="431.0" layoutY="237.0" prefHeight="31.0" prefWidth="296.0" promptText="Email:" />
-      <Label id="signup_label" layoutX="524.0" layoutY="485.0" prefHeight="17.0" prefWidth="62.0" text="New User?" />
-      <Label id="signup_link" fx:id="signupText" layoutX="586.0" layoutY="485.0" onMouseClicked="#GoToSignUp" prefHeight="17.0" prefWidth="48.0" text="Signup" textFill="#1c56d3" />
-      <Label id="signin_label" layoutX="510.0" layoutY="153.0" text="Sign in to view you emails" />
-      <Label id="name_label" layoutX="172.0" layoutY="294.0" text="JQMail" textFill="WHITE">
+      <Button fx:id="SignInBtn" layoutX="431.0" layoutY="377.0" mnemonicParsing="false" onAction="#SignIn" prefHeight="48.0" prefWidth="296.0" stylesheets="@../../../../styles.css" text="SignIn" />
+      <TextField fx:id="pwordField" layoutX="431.0" layoutY="301.0" prefHeight="32.0" prefWidth="296.0" promptText="Password:" stylesheets="@../../../../styles.css" />
+      <TextField fx:id="emailField" layoutX="431.0" layoutY="237.0" prefHeight="31.0" prefWidth="296.0" promptText="Email:" stylesheets="@../../../../styles.css" />
+      <Label id="signup_label" layoutX="524.0" layoutY="485.0" prefHeight="17.0" prefWidth="62.0" stylesheets="@../../../../styles.css" text="New User?" />
+      <Label id="signup_link" fx:id="signupText" layoutX="586.0" layoutY="485.0" onMouseClicked="#GoToSignUp" prefHeight="17.0" prefWidth="48.0" stylesheets="@../../../../styles.css" text="Signup" textFill="#1c56d3" />
+      <Label id="signin_label" layoutX="510.0" layoutY="153.0" stylesheets="@../../../../styles.css" text="Sign in to view you emails" />
+      <Label id="name_label" layoutX="178.0" layoutY="294.0" stylesheets="@../../../../styles.css" text="JQMail" textFill="WHITE">
          <font>
             <Font name="Eras Bold ITC" size="12.0" />
          </font></Label>
@@ -49,7 +49,7 @@
          <image>
             <Image url="@../../../../JQ.png" />
          </image></ImageView>
-      <Rectangle id="signIn_rect2" arcHeight="5.0" arcWidth="5.0" fill="#a1a1a1" height="577.0" layoutX="381.0" layoutY="-2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="12.0" />
-      <Label id="welcome_label" layoutX="554.0" layoutY="129.0" text="Welcome" textAlignment="CENTER" />
+      <Rectangle id="signIn_rect2" arcHeight="5.0" arcWidth="5.0" fill="#dce3eb" height="577.0" layoutX="381.0" layoutY="-2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="12.0" />
+      <Label id="welcome_label" layoutX="551.0" layoutY="129.0" stylesheets="@../../../../styles.css" text="Welcome" textAlignment="CENTER" />
    </children>
 </AnchorPane>

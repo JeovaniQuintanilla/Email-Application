@@ -27,16 +27,6 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-fill: #DCE3EB;
 }
 
-/* Textfields */
-#SignIn .text-field {
-    -fx-background-color: transparent;
-    -fx-border-color: transparent transparent #253C5E transparent;
-    -fx-border-width: 0 0 2 0;
-    -fx-text-fill: #253C5E;
-    -fx-prompt-text-fill: derive(#253C5E, -30%);
-    -fx-focus-color: #253C5E;
-}
-
 /* Buttons */
 #SignIn .button {
     -fx-font-family: "Arial";
@@ -85,4 +75,18 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-font-family: "Arial";
     -fx-text-fill:  #253C5E;
     -fx-font-weight: bold;
+}
+
+
+
+
+
+/*All  Textfields */
+.text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #253C5E transparent;
+    -fx-border-width: 0 0 2 0;
+    -fx-text-fill: #253C5E;
+    -fx-prompt-text-fill: derive(#253C5E, -30%);
+    -fx-focus-color: #253C5E;
 }

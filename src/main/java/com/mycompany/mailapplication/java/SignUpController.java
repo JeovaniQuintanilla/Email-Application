@@ -9,8 +9,11 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 import service.FirebaseInitialize;
 
 public class SignUpController {
@@ -37,6 +40,12 @@ public class SignUpController {
     private Button signupBtn;
     @FXML
     private TextField pwordField1;
+    @FXML
+    private ImageView logo3;
+    @FXML
+    private Rectangle signIn_rect;
+    @FXML
+    private ImageView logo;
     
      /**TO-DO: - this is a list of commits I plan to implement into this section
      * 1 - edit with css
@@ -47,6 +56,7 @@ public class SignUpController {
     
     public void initialize(URL url, ResourceBundle rb) {
         FirebaseInitialize.initializeFB();
+        logo3.setImage(new Image(getClass().getResourceAsStream("/DefaultPic.png")));
     }
     
     @FXML

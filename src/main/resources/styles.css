@@ -8,36 +8,22 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 */ 
 
 /*CSS for SignIn Screen*/
-.SignIn{ -fx-background-color: #ffffff; }
-
 /* Images */
 #SignIn #logo{
-   
 }
 
 #SignIn #logo2{
-  
 }
 
 /* Rectangle */
 .SignIn > #signIn_rect{ 
     -fx-fill: #144772;
 }
-
 .SignIn > #signIn_rect2{ 
     -fx-fill: #DCE3EB;
 }
 
 /* Labels on Signin*/
-#SignIn #name_label {
-    -fx-font-family: "Eras Bold ITC";
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-font-size: 40px;
-    -fx-translate-x: -55px;
-    
-}
-
 #SignIn #welcome_label {
     -fx-font-family: "Arial";
     -fx-font-align-self: center;
@@ -45,27 +31,48 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-font-weight: bold;
     -fx-translate-x: -60px;
 }
-
 #SignIn #signin_label {
     -fx-font-family: "Arial";
     -fx-translate-y: 35px;
 }
-
 #SignIn #signup_label {
     -fx-font-family: "Arial";
-    
-    
 }
-
 #SignIn #signup_link {
     -fx-font-family: "Arial";
     -fx-text-fill:  #253C5E;
     -fx-font-weight: bold;
 }
 
+/*CSS for SignUp Screen*/
+#create_account {
+    -fx-font-family: "Arial";
+    -fx-font-align-self: center;
+    -fx-font-size: 25px;
+    -fx-font-weight: bold;  
+}
+#signin_label {
+     -fx-font-family: "Arial";
+}
+#signin_link {
+    -fx-font-family: "Arial";
+    -fx-text-fill:  #253C5E;
+    -fx-font-weight: bold;
+}
 
 
+/* targets by id */
+#name_label {
+    -fx-font-family: "Eras Bold ITC";
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 40px;
+    -fx-translate-x: -55px;
+}
 
+/* targets all elements only */
+/* All AnchorPanes */
+.AnchorPane{ -fx-background-color: #ffffff; }
 
 /*All  Textfields */
 .text-field {

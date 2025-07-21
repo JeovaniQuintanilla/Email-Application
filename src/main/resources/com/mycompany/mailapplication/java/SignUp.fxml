@@ -3,25 +3,58 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="SignUp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.SignUpController">
    <children>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#949292" height="577.0" layoutX="-5.0" layoutY="-4.0" stroke="TRANSPARENT" strokeType="INSIDE" width="387.0" />
-      <TextField fx:id="fnameField" layoutX="433.0" layoutY="166.0" prefHeight="32.0" prefWidth="149.0" promptText="First Name" />
-      <TextField fx:id="emailField" layoutX="435.0" layoutY="227.0" prefHeight="32.0" prefWidth="308.0" promptText="Email Address" />
-      <TextField fx:id="lnameField" layoutX="593.0" layoutY="166.0" prefHeight="32.0" prefWidth="149.0" promptText="Last Name" />
-      <TextField fx:id="pwordField" layoutX="435.0" layoutY="294.0" prefHeight="32.0" prefWidth="308.0" promptText="Password " />
-      <Button fx:id="signupBtn" layoutX="440.0" layoutY="422.0" mnemonicParsing="false" onAction="#CreateAccount" prefHeight="48.0" prefWidth="296.0" text="Create Account" />
-      <Label layoutX="516.0" layoutY="507.0" prefHeight="17.0" prefWidth="95.0" text="Return To LogIn: " />
-      <Label fx:id="signinText" layoutX="607.0" layoutY="507.0" onMouseClicked="#ReturnToSignIn" prefHeight="17.0" prefWidth="50.0" text="SignIn" textFill="#3c6aeb" underline="true" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#a1a1a1" height="577.0" layoutX="350.0" layoutY="-4.0" stroke="TRANSPARENT" strokeType="INSIDE" width="48.0" />
-      <Label layoutX="427.0" layoutY="23.0" text="Create Your Account" />
-      <ImageView fitHeight="135.0" fitWidth="161.0" layoutX="108.0" layoutY="157.0" pickOnBounds="true" preserveRatio="true" />
-      <TextField fx:id="pwordField1" layoutX="436.0" layoutY="354.0" prefHeight="32.0" prefWidth="308.0" promptText="Password " />
-      <Label layoutX="125.0" layoutY="337.0" text="Welcome to MailGarage" />
-      <ImageView fitHeight="88.0" fitWidth="117.0" layoutX="530.0" layoutY="50.0" pickOnBounds="true" preserveRatio="true" />
+      <TextField fx:id="fnameField" layoutX="428.0" layoutY="177.0" prefHeight="32.0" prefWidth="149.0" promptText="First Name" stylesheets="@../../../../styles.css" />
+      <TextField fx:id="emailField" layoutX="430.0" layoutY="238.0" prefHeight="32.0" prefWidth="308.0" promptText="Email Address" stylesheets="@../../../../styles.css" />
+      <TextField fx:id="lnameField" layoutX="588.0" layoutY="177.0" prefHeight="32.0" prefWidth="149.0" promptText="Last Name" stylesheets="@../../../../styles.css" />
+      <TextField fx:id="pwordField" layoutX="430.0" layoutY="305.0" prefHeight="32.0" prefWidth="308.0" promptText="Password " stylesheets="@../../../../styles.css" />
+      <Button fx:id="signupBtn" layoutX="435.0" layoutY="433.0" mnemonicParsing="false" onAction="#CreateAccount" prefHeight="48.0" prefWidth="296.0" stylesheets="@../../../../styles.css" text="Create Account" />
+      <Label id="signin_label" layoutX="518.0" layoutY="517.0" prefHeight="17.0" prefWidth="95.0" stylesheets="@../../../../styles.css" text="Return To LogIn: " />
+      <Label id="signin_link" fx:id="signinText" layoutX="609.0" layoutY="517.0" onMouseClicked="#ReturnToSignIn" prefHeight="17.0" prefWidth="50.0" stylesheets="@../../../../styles.css" text="SignIn" textFill="#3c6aeb" />
+      <Label id="create_account" layoutX="402.0" layoutY="14.0" stylesheets="@../../../../styles.css" text="Create Your Account" />
+      <TextField fx:id="pwordField1" layoutX="431.0" layoutY="365.0" prefHeight="32.0" prefWidth="308.0" promptText="Password " stylesheets="@../../../../styles.css" />
+      <ImageView fx:id="logo3" fitHeight="108.0" fitWidth="110.0" layoutX="522.0" layoutY="61.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../DefaultPic.png" />
+         </image></ImageView>
+      <Rectangle id="signIn_rect" fx:id="signIn_rect" arcHeight="5.0" arcWidth="5.0" height="577.0" layoutY="-2.0" stroke="TRANSPARENT" strokeType="INSIDE" style="-fx-fill: #253C5E;" styleClass="styles.css" width="387.0">
+         <fill>
+            <LinearGradient endX="1.0" endY="1.0">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="1.0" green="1.0" blue="1.0" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </fill>
+      </Rectangle>
+      <Rectangle id="signIn_rect2" arcHeight="5.0" arcWidth="5.0" fill="#dce3eb" height="577.0" layoutX="381.0" layoutY="-2.0" stroke="TRANSPARENT" strokeType="INSIDE" width="12.0" />
+      <ImageView id="logo" fx:id="logo" fitHeight="135.0" fitWidth="161.0" layoutX="113.0" layoutY="169.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../JQMAIL_logo2.png" />
+         </image>
+      </ImageView>
+      <Label id="name_label" layoutX="178.0" layoutY="294.0" stylesheets="@../../../../styles.css" text="JQMail" textFill="WHITE">
+         <font>
+            <Font name="Eras Bold ITC" size="12.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

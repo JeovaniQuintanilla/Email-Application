@@ -23,23 +23,9 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 .SignIn > #signIn_rect{ 
     -fx-fill: #144772;
 }
+
 .SignIn > #signIn_rect2{ 
     -fx-fill: #DCE3EB;
-}
-
-/* Buttons */
-#SignIn .button {
-    -fx-font-family: "Arial";
-    -fx-background-color: #253C5E;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-background-radius: 4px;
-    -fx-cursor: hand;
-}
-
-/* Hover effect */
-#SignIn .button:hover {
-    -fx-background-color: #345379; 
 }
 
 /* Labels on Signin*/
@@ -89,4 +75,19 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
     -fx-text-fill: #253C5E;
     -fx-prompt-text-fill: derive(#253C5E, -30%);
     -fx-focus-color: #253C5E;
+}
+
+/* All Buttons */
+.button {
+    -fx-font-family: "Arial";
+    -fx-background-color: #253C5E;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+/* Hover effect */
+.button:hover {
+    -fx-background-color: #345379; 
 }

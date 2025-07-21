@@ -12,7 +12,7 @@
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="SignUp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="774.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.SignUpController">
+<AnchorPane id="SignUp" fx:id="SignUp" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="774.0" stylesheets="@../../../../styles.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mycompany.mailapplication.java.SignUpController">
    <children>
       <TextField fx:id="fnameField" layoutX="428.0" layoutY="177.0" prefHeight="32.0" prefWidth="149.0" promptText="First Name" stylesheets="@../../../../styles.css" />
       <TextField fx:id="emailField" layoutX="430.0" layoutY="238.0" prefHeight="32.0" prefWidth="308.0" promptText="Email Address" stylesheets="@../../../../styles.css" />

@@ -16,10 +16,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 
 /* Rectangle */
-.SignIn > #signIn_rect{ 
+.SignIn > #signIn-up_rect{ 
     -fx-fill: #144772;
 }
-.SignIn > #signIn_rect2{ 
+.SignIn > #signIn-up_rect2{ 
     -fx-fill: #DCE3EB;
 }
 
@@ -45,6 +45,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 }
 
 /*CSS for SignUp Screen*/
+/* Rectangle */
+.SignIn > #signup_rect{ 
+    -fx-fill: #144772;
+}
+.SignIn > #signup_rect2{ 
+    -fx-fill: #DCE3EB;
+}
 #create_account {
     -fx-font-family: "Arial";
     -fx-font-align-self: center;

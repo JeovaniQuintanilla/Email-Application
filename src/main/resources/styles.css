@@ -5,6 +5,84 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Other/CascadeStyleSheet.css to ed
 /* 
     Created on : Jul 20, 2025, 3:55:13 PM
     Author     : jeovani quintanilla
-*/
+*/ 
 
-AnchorPane{ -fx-background-color: #2388CB } 
+/*CSS for SignIn Screen*/
+.SignIn{ -fx-background-color: #ffffff; }
+
+/* Images */
+#SignIn #logo{
+   
+}
+
+#SignIn #logo2{
+  
+}
+
+/* Rectangle */
+.SignIn > #signIn_rect{ 
+    -fx-fill: #144772;
+}
+.SignIn > #signIn_rect2{ 
+    -fx-fill: #DCE3EB;
+}
+
+/* Textfields */
+#SignIn .text-field {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #253C5E transparent;
+    -fx-border-width: 0 0 2 0;
+    -fx-text-fill: #253C5E;
+    -fx-prompt-text-fill: derive(#253C5E, -30%);
+    -fx-focus-color: #253C5E;
+}
+
+/* Buttons */
+#SignIn .button {
+    -fx-font-family: "Arial";
+    -fx-background-color: #253C5E;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+/* Hover effect */
+#SignIn .button:hover {
+    -fx-background-color: #345379; 
+}
+
+/* Labels on Signin*/
+#SignIn #name_label {
+    -fx-font-family: "Eras Bold ITC";
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 40px;
+    -fx-translate-x: -55px;
+    
+}
+
+#SignIn #welcome_label {
+    -fx-font-family: "Arial";
+    -fx-font-align-self: center;
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+    -fx-translate-x: -60px;
+}
+
+#SignIn #signin_label {
+    -fx-font-family: "Arial";
+    -fx-translate-y: 35px;
+}
+
+#SignIn #signup_label {
+    -fx-font-family: "Arial";
+    
+    
+}
+
+#SignIn #signup_link {
+    -fx-font-family: "Arial";
+    -fx-text-fill:  #253C5E;
+    -fx-font-weight: bold;
+}

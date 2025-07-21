@@ -9,8 +9,11 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.shape.Rectangle;
 import service.FirebaseInitialize;
 
 
@@ -30,6 +33,16 @@ public class SignInController implements Initializable{
     @FXML
     private Label signupText;
     
+    @FXML
+    private Rectangle signIn_rect;
+    
+    @FXML
+    private ImageView logo;
+    
+    @FXML
+    private ImageView logo2;
+    
+    
     /**TO-DO: - this is a list of commits I plan to implement into this section
      * 1 - edit with css
      * 2 - add logo image
@@ -44,6 +57,8 @@ public class SignInController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         FirebaseInitialize.initializeFB();
+        logo.setImage(new Image(getClass().getResourceAsStream("/JQMAIL_logo2.png")));
+        logo2.setImage(new Image(getClass().getResourceAsStream("/JQ.png")));
     }
     
     @FXML

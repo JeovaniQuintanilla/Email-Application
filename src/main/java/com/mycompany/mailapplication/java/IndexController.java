@@ -24,6 +24,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
@@ -57,8 +58,12 @@ public class IndexController implements Initializable {
     @FXML
     private Label sent;
     
+    @FXML
+    private ImageView profilePic1;
+    
     public static Stage popUpStage;
     public static String currentBox;
+    
     
     
     /**TO-DO: - this is a list of commits I plan to implement into this section
